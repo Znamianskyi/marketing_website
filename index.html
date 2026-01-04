@@ -3,23 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dmytro — PPC & Marketing Systems (Portfolio)</title>
-  <meta name="description" content="Dmytro — PPC specialist focused on Google Ads + tracking + automations. Multi-channel paid media and measurable growth systems." />
+  <title>Dmytro — Digital Marketing Portfolio</title>
+  <meta name="description" content="Dmytro — Digital Marketing Expert. Google Ads-focused PPC, tracking/consent/server-side, and automations." />
   <style>
     :root{
-      --bg:#07090f;
-      --panel:#0d1220;
-      --panel2:#0a0f1c;
-      --text:#eef2ff;
-      --muted:#aab3c5;
-      --line:rgba(255,255,255,.10);
-      --accent:#8b5cf6;
-      --accent2:#22c55e;
-      --accent3:#06b6d4;
-      --shadow:0 18px 55px rgba(0,0,0,.55);
+      --bg:#0a0a0f;
+      --bg2:#07070b;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.04);
+      --line: rgba(255,255,255,.12);
+      --text:#f2f4ff;
+      --muted:#b4bdd3;
+      --accent:#ff4d8d;
+      --accent2:#2dd4bf;
+      --accent3:#60a5fa;
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
       --r:18px;
-      --r2:26px;
-      --max:1120px;
+      --r2:28px;
+      --max:1140px;
     }
 
     *{box-sizing:border-box}
@@ -27,156 +28,124 @@
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background:
-        radial-gradient(900px 500px at 12% 10%, rgba(139,92,246,.22), transparent 60%),
-        radial-gradient(820px 520px at 90% 20%, rgba(6,182,212,.16), transparent 60%),
-        radial-gradient(1000px 600px at 50% 120%, rgba(34,197,94,.10), transparent 60%),
-        var(--bg);
       color:var(--text);
       line-height:1.55;
+      background:
+        radial-gradient(900px 480px at 15% 10%, rgba(255,77,141,.18), transparent 60%),
+        radial-gradient(800px 520px at 88% 18%, rgba(45,212,191,.14), transparent 60%),
+        radial-gradient(900px 600px at 55% 115%, rgba(96,165,250,.12), transparent 62%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
     }
 
     a{color:inherit; text-decoration:none}
-    .container{max-width:var(--max); margin:0 auto; padding:34px 18px 80px}
+    .container{max-width:var(--max); margin:0 auto; padding:30px 18px 80px}
 
-    /* Layout */
-    .layout{
-      display:grid;
-      grid-template-columns: 320px 1fr;
-      gap:16px;
-      align-items:start;
-    }
-    @media (max-width: 980px){
-      .layout{grid-template-columns:1fr}
-    }
-
-    /* Cards */
-    .card{
+    /* Top header */
+    .header{
       border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
       border-radius:var(--r2);
-      box-shadow: var(--shadow);
+      box-shadow:var(--shadow);
       overflow:hidden;
     }
-    .card.pad{padding:18px}
-    .subtle{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      border-radius:var(--r);
-      padding:14px;
+    .hero{
+      padding:22px 22px 18px;
+      position:relative;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(700px 240px at 20% 20%, rgba(255,77,141,.22), transparent 60%),
+        radial-gradient(650px 220px at 70% 35%, rgba(45,212,191,.16), transparent 60%);
+      filter: blur(8px);
+      opacity:.9;
+      pointer-events:none;
+    }
+    .hero > *{position:relative; z-index:1}
+
+    .toprow{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .titleblock{
+      min-width:260px;
+    }
+    h1{
+      margin:0;
+      font-size:34px;
+      letter-spacing:-.8px;
+      line-height:1.1;
+    }
+    .subtitle{
+      margin:10px 0 0;
+      color:var(--muted);
+      max-width:72ch;
     }
 
-    /* Sidebar */
     .profile{
-      padding:18px;
       display:flex;
       gap:14px;
       align-items:center;
-      border-bottom:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.10);
+      padding:12px 12px;
+      border-radius:22px;
     }
     .avatar{
-      width:74px; height:74px;
+      width:68px; height:68px;
       border-radius:18px;
-      border:1px solid rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.18);
       object-fit:cover;
-      box-shadow:0 18px 40px rgba(0,0,0,.45);
-      flex:0 0 auto;
+      box-shadow:0 16px 40px rgba(0,0,0,.45);
     }
-    .name{margin:0; font-size:18px; letter-spacing:.2px}
-    .role{margin:5px 0 0; color:var(--muted); font-size:13px}
-    .badge{
-      display:inline-flex; align-items:center; gap:8px;
-      margin-top:10px;
-      padding:8px 11px;
+    .who strong{display:block; font-size:14px}
+    .who span{display:block; font-size:12.5px; color:var(--muted); margin-top:4px}
+
+    .status{
+      margin-top:14px;
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:8px 12px;
       border-radius:999px;
-      border:1px solid rgba(34,197,94,.25);
-      background:rgba(34,197,94,.10);
-      font-size:12.5px;
+      border:1px solid rgba(45,212,191,.26);
+      background:rgba(45,212,191,.10);
+      font-size:13px;
     }
-    .dot{
-      width:8px; height:8px; border-radius:999px;
+    .status i{
+      width:9px; height:9px;
+      display:inline-block;
+      border-radius:999px;
       background:var(--accent2);
-      box-shadow:0 0 0 6px rgba(34,197,94,.12);
+      box-shadow:0 0 0 6px rgba(45,212,191,.12);
     }
 
-    .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 12px;
-      border-radius:14px;
+    .nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      padding:0 22px 20px;
+    }
+    .pill{
+      padding:8px 12px;
+      border-radius:999px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.04);
       font-size:13px;
       transition:transform .15s ease, background .15s ease, border-color .15s ease;
     }
-    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.18)}
-    .btn.primary{
-      border-color:rgba(139,92,246,.40);
-      background:linear-gradient(135deg, rgba(139,92,246,.25), rgba(6,182,212,.12));
+    .pill:hover{transform:translateY(-1px); background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.18)}
+    .pill.primary{
+      border-color: rgba(255,77,141,.35);
+      background: linear-gradient(135deg, rgba(255,77,141,.18), rgba(96,165,250,.10));
     }
 
-    .nav{
-      display:grid;
-      gap:10px;
-      padding:14px 18px 18px;
-    }
-    .nav a{
-      padding:10px 12px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-      font-size:13px;
-    }
-    .nav a:hover{background:rgba(255,255,255,.06)}
-    .list{
-      margin:10px 0 0;
-      padding-left:18px;
-      color:var(--text);
-    }
-    .list li{margin:6px 0}
-    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
-    .tag{
-      font-size:12px;
-      color:var(--muted);
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      padding:6px 10px;
-      border-radius:999px;
-    }
-
-    /* Main */
-    header.hero{
-      padding:22px;
-      position:relative;
-      overflow:hidden;
-    }
-    header.hero:before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background:
-        radial-gradient(900px 280px at 20% 10%, rgba(139,92,246,.28), transparent 60%),
-        radial-gradient(600px 250px at 80% 30%, rgba(6,182,212,.18), transparent 60%),
-        radial-gradient(700px 280px at 50% 120%, rgba(34,197,94,.12), transparent 60%);
-      filter: blur(10px);
-      opacity:.9;
-      pointer-events:none;
-    }
-    header.hero > *{position:relative; z-index:1}
-    .h1{
-      margin:0;
-      font-size:36px;
-      letter-spacing:-.8px;
-      line-height:1.1;
-    }
-    .lead{
-      margin:10px 0 0;
-      color:var(--muted);
-      max-width:70ch;
-    }
-
+    /* Grid sections */
     .grid{
       display:grid;
       grid-template-columns: repeat(12, 1fr);
@@ -191,109 +160,432 @@
       .span-8,.span-6,.span-4{grid-column: span 12}
     }
 
+    .card{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius:var(--r2);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .card .pad{padding:18px}
     .section-title{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:12px;
       margin:0 0 12px;
     }
     .section-title h2{
       margin:0;
       font-size:15px;
-      letter-spacing:.2px;
+      letter-spacing:.25px;
     }
-    .mini-note{color:var(--muted); font-size:12.5px}
+    .note{color:var(--muted); font-size:12.5px}
 
-    .split{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
+    .tags{display:flex; flex-wrap:wrap; gap:8px}
+    .tag{
+      font-size:12px;
+      color:var(--muted);
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.11);
+      background:rgba(255,255,255,.03);
     }
-    @media (max-width: 560px){
-      .split{grid-template-columns:1fr}
+    ul{
+      margin:10px 0 0;
+      padding-left:18px;
     }
+    li{margin:6px 0}
 
     .metric{
       border:1px solid rgba(255,255,255,.10);
       background:rgba(255,255,255,.03);
-      border-radius:16px;
+      border-radius:18px;
       padding:14px;
     }
     .metric strong{display:block; font-size:18px}
-    .metric span{color:var(--muted); font-size:12.5px}
+    .metric span{display:block; color:var(--muted); font-size:12.5px; margin-top:6px}
 
-    /* Projects */
-    details.proj{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      border-radius:var(--r);
-      overflow:hidden;
-    }
-    details.proj[open]{background:rgba(255,255,255,.05)}
-    summary.proj-sum{
-      cursor:pointer;
-      padding:14px;
-      list-style:none;
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      font-weight:650;
-    }
-    summary.proj-sum::-webkit-details-marker{display:none}
-    .proj-body{padding:0 14px 14px}
-    .proj-img{
-      width:100%;
-      max-height:260px;
-      object-fit:cover;
-      border-radius:14px;
+    /* Projects (cards) */
+    .proj{
       border:1px solid rgba(255,255,255,.10);
-      margin:0 0 12px;
+      background:rgba(255,255,255,.03);
+      border-radius:22px;
+      overflow:hidden;
+      height:100%;
     }
-    .callout{
-      margin-top:12px;
-      padding:14px;
-      border-radius:16px;
-      border:1px solid rgba(6,182,212,.25);
-      background:rgba(6,182,212,.08);
+    .proj img{
+      width:100%;
+      display:block;
+      max-height:220px;
+      object-fit:cover;
+    }
+    .proj .body{padding:14px 14px 16px}
+    .proj h3{margin:0; font-size:15px}
+    .proj p{margin:8px 0 0; color:var(--muted); font-size:14px}
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .chip{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(96,165,250,.22);
+      background:rgba(96,165,250,.10);
       color:var(--text);
-      font-size:14px;
+    }
+    .chip.pink{
+      border-color: rgba(255,77,141,.25);
+      background: rgba(255,77,141,.10);
+    }
+    .chip.green{
+      border-color: rgba(45,212,191,.22);
+      background: rgba(45,212,191,.10);
+    }
+
+    /* CTA */
+    .cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      font-size:13px;
+      transition:transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.18)}
+    .btn.primary{
+      border-color: rgba(255,77,141,.35);
+      background: linear-gradient(135deg, rgba(255,77,141,.20), rgba(45,212,191,.10));
     }
 
     /* Pricing */
     .price{
-      display:flex; justify-content:space-between; gap:12px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
       padding:12px 0;
-      border-top:1px solid var(--line);
+      border-top:1px solid rgba(255,255,255,.10);
     }
     .price:first-child{border-top:0; padding-top:2px}
-    .price .val{white-space:nowrap; font-weight:800}
-    .muted{color:var(--muted)}
-    footer{margin-top:18px; color:var(--muted); font-size:13px; text-align:center}
-    .small{font-size:13px}
+    .val{white-space:nowrap; font-weight:800}
+
+    /* Quote */
+    blockquote{
+      margin:0;
+      padding:14px 14px 16px;
+      border-radius:22px;
+      border:1px solid rgba(45,212,191,.22);
+      background:rgba(45,212,191,.08);
+      color:var(--text);
+      font-size:14px;
+    }
+    blockquote footer{margin-top:8px; color:var(--muted); font-size:13px}
+
+    footer.site{
+      margin-top:20px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+    code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size:12px;
+      padding:.15em .35em;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:8px;
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <div class="layout">
 
-      <!-- Sidebar -->
-      <aside class="card">
-        <div class="profile">
-          <img class="avatar" src="https://prod-files-secure.s3.us-west-2.amazonaws.com/7241aac2-fbf2-4340-be4e-fba1818e3e5e/20783542-10f4-4711-914c-befdf297c0ea/1653500534787.jpg" alt="Dmytro photo" />
-          <div>
-            <h1 class="name">Dmytro</h1>
-            <p class="role">PPC • Tracking • Automations</p>
-            <div class="badge"><span class="dot" aria-hidden="true"></span> Open for new projects ✅</div>
+    <!-- HEADER -->
+    <section class="header" id="top">
+      <div class="hero">
+        <div class="toprow">
+          <div class="titleblock">
+            <h1>Dmytro — Digital Marketing Expert</h1>
+            <p class="subtitle">
+              Paid growth systems with measurable outcomes: strategy, execution, tracking (GA4 + Enhanced Conversions),
+              consent mode, server-side tracking, and automations.
+            </p>
+            <div class="status"><i aria-hidden="true"></i> Open for new projects ✅</div>
+          </div>
+
+          <div class="profile" aria-label="Profile">
+            <img class="avatar" src="https://prod-files-secure.s3.us-west-2.amazonaws.com/7241aac2-fbf2-4340-be4e-fba1818e3e5e/20783542-10f4-4711-914c-befdf297c0ea/1653500534787.jpg" alt="Dmytro photo" />
+            <div class="who">
+              <strong>Google Ads focus</strong>
+              <span>Meta • Microsoft • LinkedIn • Amazon</span>
+              <span class="note">DACH • North America • Poland</span>
+            </div>
           </div>
         </div>
+      </div>
 
-        <div class="nav">
-          <a href="#services">Services</a>
-          <a href="#proof">Proof</a>
-          <a href="#projects">Projects</a>
-          <a href="#prices">Prices</a>
-          <a href="#videos">Videos</a>
-          <a href="#contact">Contact</a>
+      <nav class="nav" aria-label="Page navigation">
+        <a class="pill" href="#services">Services</a>
+        <a class="pill" href="#projects">Projects</a>
+        <a class="pill" href="#prices">Prices</a>
+        <a class="pill" href="#videos">Videos</a>
+        <a class="pill primary" href="#contact">Contact</a>
+      </nav>
+    </section>
+
+    <!-- QUICK PROOF -->
+    <section class="grid" aria-label="Proof">
+      <div class="card span-4">
+        <div class="pad">
+          <div class="metric">
+            <strong>€150,000 / month</strong>
+            <span>Total managed e-commerce ad spend (approx.)</span>
+          </div>
         </div>
+      </div>
+      <div class="card span-4">
+        <div class="pad">
+          <div class="metric">
+            <strong>ROAS &gt; 215%</strong>
+            <span>Purchase target (break-even threshold)</span>
+          </div>
+        </div>
+      </div>
+      <div class="card span-4">
+        <div class="pad">
+          <div class="metric">
+            <strong>Full-stack delivery</strong>
+            <span>PPC + tracking + automation in one place</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="card pad">
+    <!-- SERVICES -->
+    <section class="grid" id="services">
+      <div class="card span-6">
+        <div class="pad">
+          <div class="section-title">
+            <h2>Ads management</h2>
+            <span class="note">Google / Meta / Microsoft / LinkedIn / Amazon</span>
+          </div>
+          <ul>
+            <li>Strategy creation</li>
+            <li>Campaign setup</li>
+            <li>Managing bidding strategies</li>
+            <li>Keyword research</li>
+            <li>Performance monitoring</li>
+            <li>Campaign improvements</li>
+            <li>Reporting to stakeholders</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card span-6">
+        <div class="pad">
+          <div class="section-title">
+            <h2>Tracking & technical</h2>
+            <span class="note">Google / Meta / Microsoft / LinkedIn</span>
+          </div>
+          <ul>
+            <li>Conversion tracking</li>
+            <li>Enhanced Conversion tracking</li>
+            <li>Offline conversion tracking</li>
+            <li>Remarketing / Dynamic remarketing</li>
+            <li>Consent Mode</li>
+            <li>Server-Side Tracking</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card span-12">
+        <div class="pad">
+          <div class="section-title">
+            <h2>Automations</h2>
+            <span class="note">Reduce manual work, speed up decisions</span>
+          </div>
+          <div class="tags">
+            <span class="tag">Data integration & sync</span>
+            <span class="tag">Workflow automation</span>
+            <span class="tag">Marketing automation</span>
+            <span class="tag">E-commerce automation</span>
+            <span class="tag">Reporting & analytics</span>
+            <span class="tag">Customer support automation</span>
+            <span class="tag">CRM automation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card span-12" id="contact">
+        <div class="pad">
+          <div class="section-title">
+            <h2>Contact</h2>
+            <span class="note">Fastest: LinkedIn / Upwork</span>
+          </div>
+          <div class="cta">
+            <a class="btn primary" href="https://www.linkedin.com/in/dmytro-ivanenko-09ba95197/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn" href="https://www.upwork.com/freelancers/~01d94beb9ccb6babe7" target="_blank" rel="noreferrer">Upwork</a>
+            <a class="btn" href="#prices">Pricing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="grid" id="projects" aria-label="Projects">
+      <div class="span-12">
+        <div class="section-title">
+          <h2>Some previous projects</h2>
+          <span class="note">Short, readable case cards</span>
+        </div>
+      </div>
+
+      <article class="span-6">
+        <div class="proj">
+          <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/7241aac2-fbf2-4340-be4e-fba1818e3e5e/491444a4-a36e-4518-ba7c-e3aa2df0ea5c/Untitled.png" alt="GA4 ecommerce implementation screenshot" />
+          <div class="body">
+            <h3>GA4 e-commerce funnel setup</h3>
+            <p>The client needed GA4 e-commerce tracking to measure the purchase funnel. Screenshot shows successful implementation.</p>
+            <div class="chips">
+              <span class="chip">GA4</span>
+              <span class="chip green">E-commerce</span>
+              <span class="chip">Funnel tracking</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="span-6">
+        <div class="proj">
+          <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/7241aac2-fbf2-4340-be4e-fba1818e3e5e/5046b570-4e86-4620-a490-c2700dac542d/Untitled.png" alt="Google Ads optimization results screenshot" />
+          <div class="body">
+            <h3>One-time Google Ads optimization</h3>
+            <p>Account was optimized for growth. Result: <strong>+240% revenue</strong> with only <strong>+15% costs</strong>.</p>
+            <div class="chips">
+              <span class="chip">Google Ads</span>
+              <span class="chip pink">+240% revenue</span>
+              <span class="chip">Efficiency</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="span-6">
+        <div class="proj">
+          <div class="body">
+            <h3>Ongoing account management</h3>
+            <p>
+              Started: <strong>Jan 1, 2024</strong>. Revenue mix: ~60% leads, ~40% online shop.
+              Target: purchase ROAS above <strong>215%</strong> + higher lead conversions.
+            </p>
+            <p>
+              Impact: turnover increased from <strong>123k/month avg (2023)</strong> to <strong>217k/month avg (2024)</strong>.
+            </p>
+            <div class="chips">
+              <span class="chip">Scale</span>
+              <span class="chip green">ROAS &gt; 215%</span>
+              <span class="chip">Leads + purchases</span>
+            </div>
+            <p class="note" style="margin-top:10px">
+              Your original screenshot for this item is an <code>attachment:</code> URL and won’t load on a public site. Replace with a hosted image URL.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="span-6">
+        <div class="proj">
+          <div class="body">
+            <h3>Automation: Pipedrive follow-up</h3>
+            <p>
+              A B2B workflow: email the manager if a lead doesn’t respond to a price offer within 24 hours so the offer can be adjusted or discounted.
+              Native Pipedrive automation didn’t support it, so an external tool was used.
+            </p>
+            <div class="chips">
+              <span class="chip">CRM automation</span>
+              <span class="chip green">24h logic</span>
+              <span class="chip">External tooling</span>
+            </div>
+            <p class="note" style="margin-top:10px">
+              Same note: <code>attachment:</code> images won’t display publicly.
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- PRICES + VIDEOS + QUOTE -->
+    <section class="grid" id="prices">
+      <div class="card span-8">
+        <div class="pad">
+          <div class="section-title">
+            <h2>Prices 💸</h2>
+            <span class="note">Starting points</span>
+          </div>
+
+          <div class="price">
+            <div>
+              <strong>One-time account audit</strong>
+              <div class="note">Google / Meta / Microsoft / LinkedIn / Amazon — report with next steps.</div>
+            </div>
+            <div class="val">$200</div>
+          </div>
+
+          <div class="price">
+            <div>
+              <strong>Campaign setup</strong>
+              <div class="note">Depends on business and scope.</div>
+            </div>
+            <div class="val">from $800</div>
+          </div>
+
+          <div class="price">
+            <div>
+              <strong>Campaign management</strong>
+              <div class="note">Depends on business and scope.</div>
+            </div>
+            <div class="val">from $500/mo</div>
+          </div>
+
+          <div class="price">
+            <div>
+              <strong>Technical implementation</strong>
+              <div class="note">Tracking, consent mode, server-side, etc.</div>
+            </div>
+            <div class="val">$50/hour</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card span-4" id="videos">
+        <div class="pad">
+          <div class="section-title">
+            <h2>Videos</h2>
+            <span class="note">Links</span>
+          </div>
+          <ul>
+            <li>
+              Introduction:
+              <a href="https://youtu.be/CasHysfbm8o" target="_blank" rel="noreferrer">youtu.be/CasHysfbm8o</a>
+            </li>
+            <li>
+              What does a PPC specialist do?:
+              <a href="https://www.youtube.com/watch?v=bs7bHAk4iWs&ab_channel=UniversityofMiamiDigitalSkillsBootcamps" target="_blank" rel="noreferrer">
+                youtube.com/watch?v=bs7bHAk4iWs…
+              </a>
+            </li>
+          </ul>
+
+          <div style="height:12px"></div>
+
           <div class="section-title">
             <h2>Languages</h2>
           </div>
@@ -303,256 +595,24 @@
             <span class="tag">Polish</span>
             <span class="tag">Ukrainian</span>
           </div>
-
-          <div style="height:12px"></div>
-
-          <div class="section-title">
-            <h2>Markets</h2>
-          </div>
-          <div class="tags">
-            <span class="tag">DACH</span>
-            <span class="tag">North America</span>
-            <span class="tag">Poland</span>
-          </div>
-
-          <div style="height:12px"></div>
-
-          <div class="section-title">
-            <h2 id="contact">Links</h2>
-          </div>
-          <div class="btnrow">
-            <a class="btn primary" href="https://www.linkedin.com/in/dmytro-ivanenko-09ba95197/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="btn" href="https://www.upwork.com/freelancers/~01d94beb9ccb6babe7" target="_blank" rel="noreferrer">Upwork</a>
-          </div>
         </div>
-      </aside>
+      </div>
 
-      <!-- Main -->
-      <main>
-        <header class="card hero">
-          <h2 class="h1">PPC + Tracking + Automations</h2>
-          <p class="lead">
-            I build paid acquisition systems that are measurable and scalable:
-            strategy, setup, optimization, conversion tracking, consent mode, server-side tracking, and CRM workflows.
-            Google Ads is my core channel, with hands-on work in Meta, Microsoft, LinkedIn and Amazon.
-          </p>
+      <div class="span-12">
+        <blockquote>
+          💡 <em>“Speak to your audience in their language about what’s in their heart.”</em>
+          <footer>— Jonathan Lister, VP Global Sales Solutions, LinkedIn.</footer>
+        </blockquote>
+      </div>
+    </section>
 
-          <div class="grid" id="proof" aria-label="Proof metrics">
-            <div class="metric span-4">
-              <strong>€150,000 / month</strong>
-              <span>Total managed e-commerce budget (approx.)</span>
-            </div>
-            <div class="metric span-4">
-              <strong>ROAS &gt; 215%</strong>
-              <span>Typical purchase target (break-even threshold)</span>
-            </div>
-            <div class="metric span-4">
-              <strong>Multi-channel</strong>
-              <span>Google • Meta • Microsoft • LinkedIn • Amazon</span>
-            </div>
-          </div>
-        </header>
-
-        <section id="services" class="grid">
-          <div class="card span-12 pad">
-            <div class="section-title">
-              <h2>Services</h2>
-              <span class="mini-note">Clear scope, measurable outcomes.</span>
-            </div>
-
-            <div class="split">
-              <div class="subtle">
-                <strong>Ads management</strong>
-                <ul class="list">
-                  <li>Strategy creation</li>
-                  <li>Campaign setup</li>
-                  <li>Managing bidding strategies</li>
-                  <li>Keyword research</li>
-                  <li>Performance monitoring</li>
-                  <li>Campaign changes to improve results</li>
-                  <li>Reporting to stakeholders</li>
-                </ul>
-                <p class="muted small">Google / Meta / Microsoft Ads / LinkedIn / Amazon</p>
-              </div>
-
-              <div class="subtle">
-                <strong>Technical implementation</strong>
-                <ul class="list">
-                  <li>Conversion tracking</li>
-                  <li>Enhanced Conversions</li>
-                  <li>Offline conversion tracking</li>
-                  <li>Remarketing / Dynamic remarketing</li>
-                  <li>Consent Mode</li>
-                  <li>Server-Side Tracking</li>
-                </ul>
-                <p class="muted small">Google / Meta / Microsoft Ads / LinkedIn</p>
-              </div>
-            </div>
-
-            <div style="height:12px"></div>
-
-            <div class="subtle">
-              <strong>Automations</strong>
-              <div class="tags" aria-label="Automation areas">
-                <span class="tag">Data integration & sync</span>
-                <span class="tag">Workflow automation</span>
-                <span class="tag">Marketing automation</span>
-                <span class="tag">E-commerce automation</span>
-                <span class="tag">Reporting & analytics</span>
-                <span class="tag">Customer support automation</span>
-                <span class="tag">CRM automation</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="projects" class="grid">
-          <div class="span-12">
-            <div class="section-title">
-              <h2>Previous projects</h2>
-              <span class="mini-note">Tap to expand</span>
-            </div>
-          </div>
-
-          <div class="span-12">
-            <details class="proj">
-              <summary class="proj-sum">
-                E-commerce setup in Google Analytics 4
-                <span class="muted">GA4</span>
-              </summary>
-              <div class="proj-body">
-                <img class="proj-img" src="https://prod-files-secure.s3.us-west-2.amazonaws.com/7241aac2-fbf2-4340-be4e-fba1818e3e5e/491444a4-a36e-4518-ba7c-e3aa2df0ea5c/Untitled.png" alt="GA4 ecommerce funnel screenshot" />
-                <p class="muted">
-                  The client wanted to track the purchase funnel using GA4 e-commerce. The screenshot shows a successful implementation.
-                </p>
-              </div>
-            </details>
-          </div>
-
-          <div class="span-12">
-            <details class="proj">
-              <summary class="proj-sum">
-                One-time Google Ads account optimization
-                <span class="muted">Google Ads</span>
-              </summary>
-              <div class="proj-body">
-                <img class="proj-img" src="https://prod-files-secure.s3.us-west-2.amazonaws.com/7241aac2-fbf2-4340-be4e-fba1818e3e5e/5046b570-4e86-4620-a490-c2700dac542d/Untitled.png" alt="Google Ads performance growth screenshot" />
-                <p class="muted">
-                  After tailored changes, clicks and conversions grew. Result: <strong>+240% revenue</strong> with only <strong>+15% costs</strong>.
-                </p>
-              </div>
-            </details>
-          </div>
-
-          <div class="span-12">
-            <details class="proj">
-              <summary class="proj-sum">
-                Ongoing account management (lead + purchase business)
-                <span class="muted">Growth</span>
-              </summary>
-              <div class="proj-body">
-                <p class="muted">
-                  Started: <strong>January 1, 2024</strong>. Revenue mix: ~60% leads, ~40% online purchases.
-                  Target: purchase ROAS above <strong>215%</strong> (break-even) + more lead conversions.
-                </p>
-                <p class="muted">
-                  Impact: turnover increased from <strong>123k/month avg (2023)</strong> to <strong>217k/month avg (2024)</strong>.
-                </p>
-                <div class="callout">
-                  Note: your original screenshot links for this case study use <code>attachment:</code> URLs, which won’t work on a public website.
-                  Replace them with hosted image URLs (or local files in your project).
-                </div>
-              </div>
-            </details>
-          </div>
-
-          <div class="span-12">
-            <details class="proj">
-              <summary class="proj-sum">
-                Automations (Pipedrive follow-up)
-                <span class="muted">CRM</span>
-              </summary>
-              <div class="proj-body">
-                <p class="muted">
-                  A B2B workflow: if a lead didn’t respond to a price offer within 24 hours, the manager should get an email to adjust the offer or apply a discount.
-                  Pipedrive native automation couldn’t support the exact logic, so an external tool was used.
-                </p>
-                <div class="callout">
-                  Same note: <code>attachment:</code> image URLs won’t display on a normal hosted page.
-                </div>
-              </div>
-            </details>
-          </div>
-        </section>
-
-        <section id="prices" class="grid">
-          <div class="card span-12 pad">
-            <div class="section-title">
-              <h2>Pricing 💸</h2>
-              <span class="mini-note">Starting points</span>
-            </div>
-
-            <div class="price">
-              <div>
-                <strong>One-time account audit</strong>
-                <div class="muted small">Review + report with prioritized improvements.</div>
-              </div>
-              <div class="val">$200</div>
-            </div>
-
-            <div class="price">
-              <div>
-                <strong>Campaign setup</strong>
-                <div class="muted small">Cost strongly depends on the business and scope.</div>
-              </div>
-              <div class="val">from $800</div>
-            </div>
-
-            <div class="price">
-              <div>
-                <strong>Campaign management</strong>
-                <div class="muted small">Cost strongly depends on the business and scope.</div>
-              </div>
-              <div class="val">from $500/mo</div>
-            </div>
-
-            <div class="price">
-              <div>
-                <strong>Technical implementation</strong>
-                <div class="muted small">Tracking, consent mode, server-side, etc.</div>
-              </div>
-              <div class="val">$50/hour</div>
-            </div>
-
-            <div class="callout" id="videos">
-              <strong>Videos</strong><br />
-              Introduction: <a href="https://youtu.be/CasHysfbm8o" target="_blank" rel="noreferrer">https://youtu.be/CasHysfbm8o</a><br />
-              What does a PPC specialist do?: <a href="https://www.youtube.com/watch?v=bs7bHAk4iWs&ab_channel=UniversityofMiamiDigitalSkillsBootcamps" target="_blank" rel="noreferrer">https://www.youtube.com/watch?v=bs7bHAk4iWs&ab_channel=UniversityofMiamiDigitalSkillsBootcamps</a>
-            </div>
-
-            <div class="callout" style="border-color:rgba(34,197,94,.25); background:rgba(34,197,94,.08);">
-              💡 <em>“Speak to your audience in their language about what’s in their heart.”</em>
-              <span class="muted">— Jonathan Lister, VP Global Sales Solutions, LinkedIn.</span>
-            </div>
-
-            <div class="btnrow">
-              <a class="btn primary" href="https://www.linkedin.com/in/dmytro-ivanenko-09ba95197/" target="_blank" rel="noreferrer">Message on LinkedIn</a>
-              <a class="btn" href="https://www.upwork.com/freelancers/~01d94beb9ccb6babe7" target="_blank" rel="noreferrer">Hire on Upwork</a>
-              <a class="btn" href="#services">Back to services</a>
-            </div>
-          </div>
-        </section>
-
-        <footer>
-          © <span id="year"></span> Dmytro — PPC & Marketing Systems
-        </footer>
-      </main>
-
-    </div>
+    <footer class="site">
+      © <span id="y"></span> Dmytro — Digital Marketing Portfolio
+    </footer>
   </div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
