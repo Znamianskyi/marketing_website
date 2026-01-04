@@ -1,223 +1,588 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketing - PPC Marketing for your business</title>
-    <meta name="description" content="marketing and automations">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6; 
-            color: #333;
-        }
-        
-        :root {
-            --accent-color: #2563eb;
-            --cta-bg: #1e40af;
-            --text-primary: #1e293b;
-            --text-secondary: #475569;
-            --section-bg: #f8fafc;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-        }
-        .hero-content { max-width: 800px; z-index: 1; }
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-            animation: fadeInUp 0.8s ease-out;
-        }
-        .hero p {
-            font-size: clamp(1.1rem, 2vw, 1.5rem);
-            margin-bottom: 2rem;
-            color: var(--text-secondary);
-            animation: fadeInUp 1s ease-out;
-        }
-        .cta-button {
-            display: inline-block;
-            background: var(--cta-bg);
-            color: white;
-            padding: 1.25rem 3rem;
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            animation: fadeInUp 1.2s ease-out;
-        }
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dmytro — Digital Marketing Expert (Portfolio)</title>
+  <meta name="description" content="Dmytro — Digital Marketing Expert. Google Ads focus, multi-channel PPC, tracking, server-side, consent mode, and automations." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a2e;
+      --card2:#0c172b;
+      --text:#e8eefc;
+      --muted:#a9b7d1;
+      --line:rgba(255,255,255,.10);
+      --accent:#6aa7ff;
+      --accent2:#6dffcf;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius:18px;
+      --radius2:28px;
+      --max:1100px;
+    }
 
-        
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(900px 500px at 10% 10%, rgba(106,167,255,.20), transparent 60%),
+        radial-gradient(700px 400px at 90% 25%, rgba(109,255,207,.14), transparent 60%),
+        radial-gradient(700px 500px at 50% 100%, rgba(106,167,255,.10), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .container{max-width:var(--max); margin:0 auto; padding:32px 18px 80px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:14px 18px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius:var(--radius2);
+      box-shadow: var(--shadow);
+      position:sticky; top:14px; z-index:10;
+      backdrop-filter: blur(10px);
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width:0;
+    }
+    .brand .dot{
+      width:10px; height:10px; border-radius:999px;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 0 6px rgba(106,167,255,.12);
+      flex:0 0 auto;
+    }
+    .brand strong{font-size:14px; letter-spacing:.3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    nav{
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .pill{
+      text-decoration:none;
+      border:1px solid var(--line);
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-size:13px;
+      transition:transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .pill:hover{transform:translateY(-1px); background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.18)}
+    .pill.primary{
+      border-color:rgba(106,167,255,.35);
+      background:linear-gradient(135deg, rgba(106,167,255,.18), rgba(109,255,207,.10));
+    }
 
-        
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      margin-top:18px;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .topbar{position:relative; top:auto}
+    }
 
-        /* Features Section */
-        .features {
-            padding: 5rem 2rem;
-            background: var(--section-bg);
-        }
-        .features-container { max-width: 1200px; margin: 0 auto; }
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--text-primary);
-        }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .feature-card:hover { transform: translateY(-10px); }
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        .feature-title {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
+    .card{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius:var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-inner{padding:22px}
+    .subtitle{color:var(--muted); margin:4px 0 0}
+    .h1{
+      margin:0;
+      font-size:34px;
+      letter-spacing:-.6px;
+      line-height:1.15;
+    }
+    .status{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(109,255,207,.25);
+      background:rgba(109,255,207,.10);
+      font-size:13px;
+      color:var(--text);
+      margin-top:14px;
+    }
+    .status .ring{
+      width:8px; height:8px; border-radius:999px; background:var(--accent2);
+      box-shadow:0 0 0 6px rgba(109,255,207,.12);
+    }
+    .cta-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+    .btn{
+      text-decoration:none;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      font-size:14px;
+      transition:transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.18)}
+    .btn.primary{
+      border-color:rgba(106,167,255,.40);
+      background:linear-gradient(135deg, rgba(106,167,255,.22), rgba(109,255,207,.10));
+    }
 
-        
-        /* Pricing Section */
-        .pricing {
-            padding: 5rem 2rem;
-            background: white;
-        }
-        .pricing-container { max-width: 1000px; margin: 0 auto; text-align: center; }
-        .price {
-            font-size: 4rem;
-            font-weight: 800;
-            color: var(--accent-color);
-            margin: 2rem 0;
-        }
-        .price-features {
-            text-align: left;
-            max-width: 500px;
-            margin: 2rem auto;
-        }
-        .price-feature {
-            padding: 1rem;
-            border-bottom: 1px solid #eee;
-            font-size: 1.1rem;
-        }
-        
+    .profile{
+      display:flex; gap:16px; align-items:center;
+      padding:18px;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border-bottom:1px solid var(--line);
+    }
+    .avatar{
+      width:84px; height:84px; border-radius:20px; object-fit:cover;
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow: 0 16px 35px rgba(0,0,0,.35);
+      flex:0 0 auto;
+    }
+    .mini h2{margin:0; font-size:18px}
+    .mini p{margin:6px 0 0; color:var(--muted); font-size:14px}
 
-        
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+    .span-6{grid-column: span 6}
+    .span-4{grid-column: span 4}
+    .span-8{grid-column: span 8}
+    .span-12{grid-column: span 12}
+    @media (max-width: 900px){
+      .span-6,.span-4,.span-8{grid-column: span 12}
+    }
 
-        /* Final CTA Section */
-        .final-cta {
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, var(--accent-color), var(--cta-bg));
-            text-align: center;
-            color: white;
-        }
-        .final-cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
+    .section-title{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      margin:0 0 12px;
+    }
+    .section-title h3{margin:0; font-size:16px}
+    .tagrow{display:flex; flex-wrap:wrap; gap:8px}
+    .tag{
+      font-size:12px; color:var(--muted);
+      border:1px solid var(--line);
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.03);
+    }
+    ul.clean{margin:10px 0 0; padding-left:18px; color:var(--text)}
+    ul.clean li{margin:6px 0}
+    .muted{color:var(--muted)}
+    .divider{height:1px; background:var(--line); margin:16px 0}
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .media{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:var(--radius);
+      overflow:hidden;
+    }
+    .media img{
+      width:100%;
+      display:block;
+      object-fit:cover;
+      max-height:260px;
+    }
+    .media .body{padding:14px 14px 16px}
+    .media h4{margin:0 0 6px; font-size:15px}
+    .media p{margin:0; color:var(--muted); font-size:14px}
+    .kpi{
+      display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;
+    }
+    .kpi .chip{
+      font-size:12px;
+      border:1px solid rgba(106,167,255,.25);
+      background:rgba(106,167,255,.10);
+      padding:6px 10px;
+      border-radius:999px;
+      color:var(--text);
+    }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .features-grid { grid-template-columns: 1fr; }
-            .countdown { flex-wrap: wrap; gap: 1rem; }
-        }
-    </style>
+    details{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:var(--radius);
+      padding:12px 14px;
+    }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      font-weight:600;
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+    }
+    summary::-webkit-details-marker{display:none}
+    details[open]{background:rgba(255,255,255,.05)}
+    .price{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
+      padding:12px 0;
+      border-top:1px solid var(--line);
+    }
+    .price:first-of-type{border-top:0; padding-top:4px}
+    .price strong{font-size:14px}
+    .price .val{white-space:nowrap; font-weight:700}
+    .quote{
+      margin-top:14px;
+      padding:14px 14px 16px;
+      border-radius:var(--radius);
+      border:1px solid rgba(109,255,207,.22);
+      background:rgba(109,255,207,.08);
+      color:var(--text);
+      font-size:14px;
+    }
+    footer{
+      margin-top:26px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+    .small{font-size:13px}
+  </style>
 </head>
+
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>PPC Marketing for your business</h1>
-            <p>marketing and automations</p>
-            <a href="#signup" class="cta-button">Book free meeting</a>
-            
-            
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <strong>Dmytro — Digital Marketing Expert</strong>
+      </div>
+      <nav aria-label="Quick navigation">
+        <a class="pill" href="#services">Services</a>
+        <a class="pill" href="#projects">Projects</a>
+        <a class="pill" href="#prices">Prices</a>
+        <a class="pill primary" href="#contact">Contact</a>
+      </nav>
+    </div>
 
-            
+    <section class="hero" id="top">
+      <div class="card">
+        <div class="card-inner">
+          <h1 class="h1">Digital Marketing Expert</h1>
+          <p class="subtitle">
+            Google Ads focus. Multi-channel PPC, tracking, consent mode, server-side, and automations.
+          </p>
+
+          <div class="status">
+            <span class="ring" aria-hidden="true"></span>
+            Open for new projects ✅
+          </div>
+
+          <div class="cta-row" id="contact">
+            <a class="btn primary" href="https://www.linkedin.com/in/dmytro-ivanenko-09ba95197/" target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+            <a class="btn" href="https://www.upwork.com/freelancers/~01d94beb9ccb6babe7" target="_blank" rel="noreferrer">
+              Upwork
+            </a>
+            <a class="btn" href="#prices">View pricing</a>
+          </div>
+
+          <div class="divider"></div>
+
+          <p class="muted">
+            Welcome. I’m an experienced Digital Marketing Expert working with Meta, Microsoft, LinkedIn and Amazon,
+            but my primary focus is Google Ads. I deliver full PPC strategy + execution, advanced tracking, and automation
+            to make results measurable and scalable.
+          </p>
+
+          <p class="muted">
+            Experience includes managing several large e-commerce brands with a total budget of about
+            <strong>150,000 EUR/month</strong>.
+          </p>
+
+          <p class="small">Let’s connect to exceed expectations in your marketing journey. 🚀💼</p>
         </div>
+      </div>
+
+      <aside class="card">
+        <div class="profile">
+          <img class="avatar" alt="Dmytro profile photo" src="https://prod-files-secure.s3.us-west-2.amazonaws.com/7241aac2-fbf2-4340-be4e-fba1818e3e5e/20783542-10f4-4711-914c-befdf297c0ea/1653500534787.jpg" />
+          <div class="mini">
+            <h2>Dmytro</h2>
+            <p class="muted">PPC • Tracking • Automations</p>
+          </div>
+        </div>
+        <div class="card-inner">
+          <div class="section-title">
+            <h3>Languages</h3>
+          </div>
+          <div class="tagrow" aria-label="Languages">
+            <span class="tag">English</span>
+            <span class="tag">German</span>
+            <span class="tag">Polish</span>
+            <span class="tag">Ukrainian</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-title">
+            <h3>Markets</h3>
+          </div>
+          <div class="tagrow" aria-label="Markets">
+            <span class="tag">DACH</span>
+            <span class="tag">North America</span>
+            <span class="tag">Poland</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-title">
+            <h3>Videos</h3>
+          </div>
+          <details>
+            <summary>
+              Introduction
+              <span class="muted">YouTube</span>
+            </summary>
+            <p class="muted" style="margin:10px 0 0;">
+              <a href="https://youtu.be/CasHysfbm8o" target="_blank" rel="noreferrer">https://youtu.be/CasHysfbm8o</a>
+            </p>
+          </details>
+
+          <div style="height:10px"></div>
+
+          <details>
+            <summary>
+              What does a PPC specialist do?
+              <span class="muted">YouTube</span>
+            </summary>
+            <p class="muted" style="margin:10px 0 0;">
+              <a href="https://www.youtube.com/watch?v=bs7bHAk4iWs&ab_channel=UniversityofMiamiDigitalSkillsBootcamps" target="_blank" rel="noreferrer">
+                https://www.youtube.com/watch?v=bs7bHAk4iWs&ab_channel=UniversityofMiamiDigitalSkillsBootcamps
+              </a>
+            </p>
+          </details>
+        </div>
+      </aside>
     </section>
 
-    
-    <!-- Features Section -->
-    <section class="features">
-        <div class="features-container">
-            <h2 class="section-title">Why Choose Marketing?</h2>
-            <div class="features-grid">
-                
-                <div class="feature-card">
-                    <div class="feature-icon">✨</div>
-                    <h3 class="feature-title">Key feature 1</h3>
-                    <p>Experience the power of key feature 1 that drives real results.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">✨</div>
-                    <h3 class="feature-title">Key feature 2</h3>
-                    <p>Experience the power of key feature 2 that drives real results.</p>
-                </div>
-                
+    <section id="services" class="grid" aria-label="Services">
+      <div class="card span-6">
+        <div class="card-inner">
+          <div class="section-title">
+            <h3>Ads Management Offer</h3>
+          </div>
+          <p class="muted">Google / Meta / Microsoft Ads / LinkedIn / Amazon</p>
+          <ul class="clean">
+            <li>Strategy creation</li>
+            <li>Campaign setup</li>
+            <li>Managing bidding strategies</li>
+            <li>Performing keyword research</li>
+            <li>Monitoring the effectiveness of campaigns</li>
+            <li>Modifying campaigns to improve results</li>
+            <li>Reporting to key stakeholders</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card span-6">
+        <div class="card-inner">
+          <div class="section-title">
+            <h3>Technical Offer</h3>
+          </div>
+          <p class="muted">Google / Meta / Microsoft Ads / LinkedIn</p>
+          <ul class="clean">
+            <li>Conversion tracking</li>
+            <li>Enhanced Conversion tracking</li>
+            <li>Offline conversion tracking</li>
+            <li>Remarketing / Dynamic remarketing</li>
+            <li>Consent Mode</li>
+            <li>Server-Side Tracking</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card span-12">
+        <div class="card-inner">
+          <div class="section-title">
+            <h3>Automations</h3>
+          </div>
+          <div class="tagrow" aria-label="Automation areas">
+            <span class="tag">Data integration & sync</span>
+            <span class="tag">Workflow automation</span>
+            <span class="tag">Marketing automation</span>
+            <span class="tag">E-commerce automation</span>
+            <span class="tag">Reporting & analytics</span>
+            <span class="tag">Customer support automation</span>
+            <span class="tag">CRM automation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="grid" aria-label="Projects">
+      <div class="span-12" style="margin-top:10px">
+        <div class="section-title">
+          <h3>Previous Projects</h3>
+          <span class="muted small">(click on each item to learn more)</span>
+        </div>
+      </div>
+
+      <div class="span-6">
+        <details class="media">
+          <summary style="padding:14px 14px 0;">
+            E-commerce setup in Google Analytics 4
+            <span class="muted">GA4</span>
+          </summary>
+          <img alt="GA4 ecommerce funnel screenshot" src="https://prod-files-secure.s3.us-west-2.amazonaws.com/7241aac2-fbf2-4340-be4e-fba1818e3e5e/491444a4-a36e-4518-ba7c-e3aa2df0ea5c/Untitled.png" />
+          <div class="body">
+            <h4>Outcome</h4>
+            <p>The client wanted to track the purchase funnel using GA4 e-commerce tracking. Screenshot shows successful implementation.</p>
+            <div class="kpi">
+              <span class="chip">GA4 e-commerce</span>
+              <span class="chip">Funnel visibility</span>
+              <span class="chip">Event validation</span>
             </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="span-6">
+        <details class="media">
+          <summary style="padding:14px 14px 0;">
+            One-time Google Ads account optimization
+            <span class="muted">Google Ads</span>
+          </summary>
+          <img alt="Google Ads performance growth screenshot" src="https://prod-files-secure.s3.us-west-2.amazonaws.com/7241aac2-fbf2-4340-be4e-fba1818e3e5e/5046b570-4e86-4620-a490-c2700dac542d/Untitled.png" />
+          <div class="body">
+            <h4>Result</h4>
+            <p>Client requested a one-time optimization to increase conversions. After tailored changes, clicks and conversions grew. Client saw a <strong>240% revenue increase</strong> with only a <strong>15% cost increase</strong>.</p>
+            <div class="kpi">
+              <span class="chip">+240% revenue</span>
+              <span class="chip">+15% costs</span>
+              <span class="chip">Account restructure</span>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="span-6">
+        <details class="media">
+          <summary style="padding:14px 14px 0;">
+            Ongoing account management
+            <span class="muted">Performance</span>
+          </summary>
+          <!-- Note: "attachment:" links won't work on a normal website. Replace with a real image URL or local file path. -->
+          <div class="body">
+            <h4>Context</h4>
+            <p>Started: <strong>January 1, 2024</strong>. Business generates ~60% revenue from leads and ~40% from online shop purchases.</p>
+            <h4 style="margin-top:10px">Targets</h4>
+            <p>Maximize purchase ROAS above <strong>215%</strong> (break-even) and increase lead conversions.</p>
+            <h4 style="margin-top:10px">Impact</h4>
+            <p>Helped increase turnover from <strong>123k/month avg (2023)</strong> to <strong>217k/month avg (2024)</strong>.</p>
+            <div class="kpi">
+              <span class="chip">ROAS target &gt; 215%</span>
+              <span class="chip">Lead + purchase mix</span>
+              <span class="chip">Scale with control</span>
+            </div>
+            <p class="muted" style="margin-top:10px">
+              Image note: your current “attachment:” screenshot link won’t display online. Replace it with a hosted URL.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <div class="span-6">
+        <details class="media">
+          <summary style="padding:14px 14px 0;">
+            Automations (Pipedrive workflow)
+            <span class="muted">Automation</span>
+          </summary>
+          <!-- Note: "attachment:" links won't work on a normal website. Replace with a real image URL or local file path. -->
+          <div class="body">
+            <h4>Request</h4>
+            <p>A B2B client needed an alert email to a manager if a lead didn’t respond to a price offer within 24 hours, so the manager could adjust the offer or add a discount.</p>
+            <h4 style="margin-top:10px">Solution</h4>
+            <p>Pipedrive native automations didn’t support the exact workflow, so an external tool was used.</p>
+            <div class="kpi">
+              <span class="chip">24h follow-up logic</span>
+              <span class="chip">CRM automation</span>
+              <span class="chip">External tooling</span>
+            </div>
+            <p class="muted" style="margin-top:10px">
+              Image note: your current “attachment:” image link won’t display online. Replace it with a hosted URL.
+            </p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="prices" class="grid" aria-label="Pricing">
+      <div class="card span-12">
+        <div class="card-inner">
+          <div class="section-title">
+            <h3>Prices 💸</h3>
+            <span class="muted small">Starting points — final cost depends on scope</span>
+          </div>
+
+          <div class="price">
+            <div>
+              <strong>One-time account audit</strong>
+              <div class="muted small">Google Ads / Meta / Microsoft Ads / LinkedIn / Amazon</div>
+              <div class="muted small">Review + report with prioritized improvements.</div>
+            </div>
+            <div class="val">$200</div>
+          </div>
+
+          <div class="price">
+            <div>
+              <strong>Campaign setup</strong>
+              <div class="muted small">Google Ads / Meta / Microsoft Ads / LinkedIn / Amazon</div>
+              <div class="muted small">Strongly depends on your business and scope.</div>
+            </div>
+            <div class="val">from $800</div>
+          </div>
+
+          <div class="price">
+            <div>
+              <strong>Campaign management</strong>
+              <div class="muted small">Google Ads / Meta / Microsoft Ads / LinkedIn / Amazon</div>
+              <div class="muted small">Strongly depends on your business and scope.</div>
+            </div>
+            <div class="val">from $500/mo</div>
+          </div>
+
+          <div class="price">
+            <div>
+              <strong>Technical implementation</strong>
+              <div class="muted small">Tracking, consent mode, server-side, etc.</div>
+              <div class="muted small">Personalized and cost-effective for your requirements.</div>
+            </div>
+            <div class="val">$50/hour</div>
+          </div>
+
+          <div class="quote">
+            💡 <em>“Speak to your audience in their language about what’s in their heart.”</em>
+            <span class="muted">— Jonathan Lister, VP Global Sales Solutions, LinkedIn.</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="cta-row" style="margin-top:0">
+            <a class="btn primary" href="https://www.linkedin.com/in/dmytro-ivanenko-09ba95197/" target="_blank" rel="noreferrer">Message on LinkedIn</a>
+            <a class="btn" href="https://www.upwork.com/freelancers/~01d94beb9ccb6babe7" target="_blank" rel="noreferrer">Hire on Upwork</a>
+            <a class="btn" href="#top">Back to top</a>
+          </div>
         </div>
-    </section>
-    
-
-    
-    <!-- Pricing Section -->
-    <section class="pricing">
-        <div class="pricing-container">
-            <h2 class="section-title">Simple, Transparent Pricing</h2>
-            <div class="price">50$ per hour</div>
-            <a href="#signup" class="cta-button">Book free meeting</a>
-        </div>
-    </section>
-    
-
-    
-
-    <!-- Final CTA -->
-    <section class="final-cta">
-        <h2>Ready to Get Started?</h2>
-        <p style="font-size: 1.3rem; margin-bottom: 2rem;">Save a lot of stress by working with the dedicated specialist</p>
-        <a href="#signup" class="cta-button">Start Your Journey</a>
+      </div>
     </section>
 
-    
+    <footer>
+      © <span id="year"></span> Dmytro — Digital Marketing Expert • Built as a single HTML file
+    </footer>
+  </div>
+
+  <script>
+    // Tiny helper: update footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
