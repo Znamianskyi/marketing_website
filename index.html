@@ -3,24 +3,32 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dmytro — Digital Marketing Portfolio</title>
-  <meta name="description" content="Dmytro — Digital Marketing Expert. Google Ads-focused PPC, tracking/consent/server-side, and automations." />
+  <title>Dmytro — Digital Marketing Expert (Portfolio)</title>
+  <meta name="description" content="Dmytro — Digital Marketing Expert. PPC systems: ads, tracking, consent/server-side, automations, and cold emailing." />
+
   <style>
     :root{
       --bg:#0a0a0f;
       --bg2:#07070b;
-      --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.04);
-      --line: rgba(255,255,255,.12);
+
       --text:#f2f4ff;
       --muted:#b4bdd3;
+      --line: rgba(255,255,255,.12);
+
       --accent:#ff4d8d;
       --accent2:#2dd4bf;
       --accent3:#60a5fa;
+
       --shadow: 0 18px 60px rgba(0,0,0,.55);
       --r:18px;
       --r2:28px;
       --max:1140px;
+
+      /* Area backgrounds (to visually separate sections) */
+      --area-services: rgba(96,165,250,.08);
+      --area-work: rgba(45,212,191,.08);
+      --area-pricing: rgba(255,77,141,.08);
+      --area-contact: rgba(255,255,255,.06);
     }
 
     *{box-sizing:border-box}
@@ -38,9 +46,9 @@
     }
 
     a{color:inherit; text-decoration:none}
-    .container{max-width:var(--max); margin:0 auto; padding:30px 18px 80px}
+    .container{max-width:var(--max); margin:0 auto; padding:30px 18px 90px}
 
-    /* Top header */
+    /* FIRST AREA: Header block stays framed like before */
     .header{
       border:1px solid var(--line);
       background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
@@ -48,10 +56,7 @@
       box-shadow:var(--shadow);
       overflow:hidden;
     }
-    .hero{
-      padding:22px 22px 18px;
-      position:relative;
-    }
+    .hero{padding:22px 22px 18px; position:relative;}
     .hero:before{
       content:"";
       position:absolute;
@@ -68,44 +73,27 @@
     .toprow{
       display:flex;
       gap:18px;
-      align-items:center;
+      align-items:flex-start;
       justify-content:space-between;
       flex-wrap:wrap;
     }
-    .titleblock{
-      min-width:260px;
-    }
+    .titleblock{min-width:280px}
     h1{
       margin:0;
       font-size:34px;
       letter-spacing:-.8px;
-      line-height:1.1;
+      line-height:1.05;
+    }
+    .title{
+      margin:8px 0 0;
+      font-size:16px;
+      color:var(--muted);
     }
     .subtitle{
-      margin:10px 0 0;
+      margin:12px 0 0;
       color:var(--muted);
-      max-width:72ch;
+      max-width:78ch;
     }
-
-    .profile{
-      display:flex;
-      gap:14px;
-      align-items:center;
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.10);
-      padding:12px 12px;
-      border-radius:22px;
-    }
-    .avatar{
-      width:68px; height:68px;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.18);
-      object-fit:cover;
-      box-shadow:0 16px 40px rgba(0,0,0,.45);
-    }
-    .who strong{display:block; font-size:14px}
-    .who span{display:block; font-size:12.5px; color:var(--muted); margin-top:4px}
-
     .status{
       margin-top:14px;
       display:inline-flex;
@@ -125,6 +113,27 @@
       box-shadow:0 0 0 6px rgba(45,212,191,.12);
     }
 
+    .profile{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.10);
+      padding:12px 12px;
+      border-radius:22px;
+      max-width:420px;
+    }
+    .avatar{
+      width:68px; height:68px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.18);
+      object-fit:cover;
+      box-shadow:0 16px 40px rgba(0,0,0,.45);
+      flex:0 0 auto;
+    }
+    .who strong{display:block; font-size:14px}
+    .who span{display:block; font-size:12.5px; color:var(--muted); margin-top:4px}
+
     .nav{
       display:flex;
       gap:10px;
@@ -142,111 +151,99 @@
     .pill:hover{transform:translateY(-1px); background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.18)}
     .pill.primary{
       border-color: rgba(255,77,141,.35);
-      background: linear-gradient(135deg, rgba(255,77,141,.18), rgba(96,165,250,.10));
+      background: linear-gradient(135deg, rgba(255,77,141,.20), rgba(96,165,250,.10));
     }
 
-    /* Grid sections */
+    /* SECTION AREAS (unframed, separate style) */
+    .area{
+      margin-top:22px; /* distance between areas */
+      padding:20px;
+      border-radius:var(--r2);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow: 0 10px 35px rgba(0,0,0,.30);
+      background: rgba(255,255,255,.03);
+    }
+    .area.services{background: linear-gradient(180deg, var(--area-services), rgba(255,255,255,.02));}
+    .area.work{background: linear-gradient(180deg, var(--area-work), rgba(255,255,255,.02));}
+    .area.pricing{background: linear-gradient(180deg, var(--area-pricing), rgba(255,255,255,.02));}
+    .area.contact{background: linear-gradient(180deg, var(--area-contact), rgba(255,255,255,.02));}
+
+    .area-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:14px;
+    }
+    .area-title{
+      margin:0;
+      font-size:22px;              /* bigger heading */
+      letter-spacing:-.3px;
+      line-height:1.1;
+    }
+    .area-note{margin:0; color:var(--muted); font-size:13px}
+
+    /* Grid inside areas */
     .grid{
       display:grid;
       grid-template-columns: repeat(12, 1fr);
       gap:14px;
-      margin-top:14px;
     }
     .span-12{grid-column: span 12}
-    .span-8{grid-column: span 8}
     .span-6{grid-column: span 6}
     .span-4{grid-column: span 4}
     @media (max-width: 980px){
-      .span-8,.span-6,.span-4{grid-column: span 12}
+      .span-6,.span-4{grid-column: span 12}
     }
 
-    .card{
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border-radius:var(--r2);
-      box-shadow:var(--shadow);
+    /* Accordion blocks */
+    details.acc{
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.16);
+      border-radius:22px;
       overflow:hidden;
     }
-    .card .pad{padding:18px}
-    .section-title{
-      display:flex;
-      align-items:baseline;
-      justify-content:space-between;
-      gap:12px;
-      margin:0 0 12px;
-    }
-    .section-title h2{
-      margin:0;
-      font-size:15px;
-      letter-spacing:.25px;
-    }
-    .note{color:var(--muted); font-size:12.5px}
-
-    .tags{display:flex; flex-wrap:wrap; gap:8px}
-    .tag{
-      font-size:12px;
-      color:var(--muted);
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.11);
-      background:rgba(255,255,255,.03);
-    }
-    ul{
-      margin:10px 0 0;
-      padding-left:18px;
-    }
-    li{margin:6px 0}
-
-    .metric{
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-      border-radius:18px;
+    details.acc[open]{background:rgba(0,0,0,.22)}
+    summary.acc-sum{
+      cursor:pointer;
       padding:14px;
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      font-weight:800;
     }
-    .metric strong{display:block; font-size:18px}
-    .metric span{display:block; color:var(--muted); font-size:12.5px; margin-top:6px}
+    summary.acc-sum::-webkit-details-marker{display:none}
+    .acc-body{padding:0 14px 14px}
+    .acc-body p{margin:0; color:var(--muted)}
+    .acc-body ul{margin:10px 0 0; padding-left:18px}
+    .acc-body li{margin:6px 0}
 
-    /* Projects (cards) */
-    .proj{
+    /* Example “inline cards” within a details block */
+    .mini-card{
+      margin-top:12px;
       border:1px solid rgba(255,255,255,.10);
       background:rgba(255,255,255,.03);
       border-radius:22px;
       overflow:hidden;
-      height:100%;
     }
-    .proj img{
+    .mini-card .pad{padding:14px}
+    .mini-card img{
       width:100%;
-      display:block;
-      max-height:220px;
+      max-height:260px;
       object-fit:cover;
-    }
-    .proj .body{padding:14px 14px 16px}
-    .proj h3{margin:0; font-size:15px}
-    .proj p{margin:8px 0 0; color:var(--muted); font-size:14px}
-    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
-    .chip{
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(96,165,250,.22);
-      background:rgba(96,165,250,.10);
-      color:var(--text);
-    }
-    .chip.pink{
-      border-color: rgba(255,77,141,.25);
-      background: rgba(255,77,141,.10);
-    }
-    .chip.green{
-      border-color: rgba(45,212,191,.22);
-      background: rgba(45,212,191,.10);
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      display:block;
     }
 
-    /* CTA */
+    /* Buttons */
     .cta{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      margin-top:12px;
+      margin-top:8px;
     }
     .btn{
       display:inline-flex;
@@ -265,7 +262,7 @@
       background: linear-gradient(135deg, rgba(255,77,141,.20), rgba(45,212,191,.10));
     }
 
-    /* Pricing */
+    /* Pricing rows */
     .price{
       display:flex;
       justify-content:space-between;
@@ -274,26 +271,9 @@
       border-top:1px solid rgba(255,255,255,.10);
     }
     .price:first-child{border-top:0; padding-top:2px}
-    .val{white-space:nowrap; font-weight:800}
+    .val{white-space:nowrap; font-weight:900}
+    .small{font-size:13px}
 
-    /* Quote */
-    blockquote{
-      margin:0;
-      padding:14px 14px 16px;
-      border-radius:22px;
-      border:1px solid rgba(45,212,191,.22);
-      background:rgba(45,212,191,.08);
-      color:var(--text);
-      font-size:14px;
-    }
-    blockquote footer{margin-top:8px; color:var(--muted); font-size:13px}
-
-    footer.site{
-      margin-top:20px;
-      text-align:center;
-      color:var(--muted);
-      font-size:13px;
-    }
     code{
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
       font-size:12px;
@@ -302,31 +282,43 @@
       border:1px solid rgba(255,255,255,.10);
       border-radius:8px;
     }
+
+    footer.site{
+      margin-top:22px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
 
-    <!-- HEADER -->
+    <!-- 1) FIRST AREA: HEADER BLOCK (unchanged framing) -->
     <section class="header" id="top">
       <div class="hero">
         <div class="toprow">
           <div class="titleblock">
-            <h1>Dmytro — Digital Marketing Expert</h1>
+            <h1>Dmytro</h1>
+            <div class="title">Digital Marketing Expert</div>
+
             <p class="subtitle">
-              Paid growth systems with measurable outcomes: strategy, execution, tracking (GA4 + Enhanced Conversions),
-              consent mode, server-side tracking, and automations.
+              I build paid growth systems end-to-end: ads (Google/Meta/etc.), conversion tracking (GA4 + Enhanced Conversions),
+              consent mode, server-side tracking, automations, and cold emailing—so results are measurable and scalable.
             </p>
+
             <div class="status"><i aria-hidden="true"></i> Open for new projects ✅</div>
           </div>
 
           <div class="profile" aria-label="Profile">
-            <img class="avatar" src="https://prod-files-secure.s3.us-west-2.amazonaws.com/7241aac2-fbf2-4340-be4e-fba1818e3e5e/20783542-10f4-4711-914c-befdf297c0ea/1653500534787.jpg" alt="Dmytro photo" />
+            <img class="avatar"
+                 src="https://prod-files-secure.s3.us-west-2.amazonaws.com/7241aac2-fbf2-4340-be4e-fba1818e3e5e/20783542-10f4-4711-914c-befdf297c0ea/1653500534787.jpg"
+                 alt="Dmytro photo" />
             <div class="who">
               <strong>Google Ads focus</strong>
               <span>Meta • Microsoft • LinkedIn • Amazon</span>
-              <span class="note">DACH • North America • Poland</span>
+              <span>DACH • North America • Poland</span>
             </div>
           </div>
         </div>
@@ -334,280 +326,312 @@
 
       <nav class="nav" aria-label="Page navigation">
         <a class="pill" href="#services">Services</a>
-        <a class="pill" href="#projects">Projects</a>
-        <a class="pill" href="#prices">Prices</a>
-        <a class="pill" href="#videos">Videos</a>
+        <a class="pill" href="#work">Examples</a>
+        <a class="pill" href="#pricing">Pricing</a>
         <a class="pill primary" href="#contact">Contact</a>
       </nav>
     </section>
 
-    <!-- QUICK PROOF -->
-    <section class="grid" aria-label="Proof">
-      <div class="card span-4">
-        <div class="pad">
-          <div class="metric">
-            <strong>€150,000 / month</strong>
-            <span>Total managed e-commerce ad spend (approx.)</span>
-          </div>
-        </div>
+    <!-- 2) SERVICES AREA (separate area, different style) -->
+    <section class="area services" id="services" aria-label="Services">
+      <div class="area-head">
+        <h2 class="area-title">Services</h2>
+        <p class="area-note">Open each block for details</p>
       </div>
-      <div class="card span-4">
-        <div class="pad">
-          <div class="metric">
-            <strong>ROAS &gt; 215%</strong>
-            <span>Purchase target (break-even threshold)</span>
-          </div>
+
+      <div class="grid">
+        <div class="span-4">
+          <details class="acc">
+            <summary class="acc-sum">
+              Google Ads
+              <span class="area-note">Search • Shopping • PMax</span>
+            </summary>
+            <div class="acc-body">
+              <p>Strategy, setup, optimization, and reporting with a focus on profitable scaling.</p>
+              <ul>
+                <li>Account structure, bidding, keyword research</li>
+                <li>Landing page + intent alignment</li>
+                <li>Audits and quick wins</li>
+              </ul>
+            </div>
+          </details>
         </div>
-      </div>
-      <div class="card span-4">
-        <div class="pad">
-          <div class="metric">
-            <strong>Full-stack delivery</strong>
-            <span>PPC + tracking + automation in one place</span>
-          </div>
+
+        <div class="span-4">
+          <details class="acc">
+            <summary class="acc-sum">
+              Meta Ads
+              <span class="area-note">Prospecting • Remarketing</span>
+            </summary>
+            <div class="acc-body">
+              <p>Full-funnel campaigns with clean attribution and tracking.</p>
+              <ul>
+                <li>Creative + audience testing structure</li>
+                <li>Dynamic remarketing</li>
+                <li>Iteration based on data</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="span-4">
+          <details class="acc">
+            <summary class="acc-sum">
+              LinkedIn Ads
+              <span class="area-note">B2B lead gen</span>
+            </summary>
+            <div class="acc-body">
+              <p>B2B acquisition with qualification and pipeline visibility.</p>
+              <ul>
+                <li>Lead gen forms + CRM handoff</li>
+                <li>ABM-style lists and targeting</li>
+                <li>Lead quality reporting</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="span-6">
+          <details class="acc">
+            <summary class="acc-sum">
+              Microsoft Ads
+              <span class="area-note">Search • Shopping</span>
+            </summary>
+            <div class="acc-body">
+              <p>Incremental volume beyond Google with tight query control.</p>
+              <ul>
+                <li>Mirrored structure where it fits</li>
+                <li>Negatives and search term hygiene</li>
+                <li>Tracking validation</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="span-6">
+          <details class="acc">
+            <summary class="acc-sum">
+              Cold Emailing
+              <span class="area-note">Outbound system</span>
+            </summary>
+            <div class="acc-body">
+              <p>Outbound designed like a performance system: message → sequence → tracking → follow-up.</p>
+              <ul>
+                <li>Offer + ICP messaging</li>
+                <li>Sequence design (1–5 steps)</li>
+                <li>CRM routing and notifications</li>
+              </ul>
+            </div>
+          </details>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section class="grid" id="services">
-      <div class="card span-6">
-        <div class="pad">
-          <div class="section-title">
-            <h2>Ads management</h2>
-            <span class="note">Google / Meta / Microsoft / LinkedIn / Amazon</span>
-          </div>
-          <ul>
-            <li>Strategy creation</li>
-            <li>Campaign setup</li>
-            <li>Managing bidding strategies</li>
-            <li>Keyword research</li>
-            <li>Performance monitoring</li>
-            <li>Campaign improvements</li>
-            <li>Reporting to stakeholders</li>
-          </ul>
-        </div>
+    <!-- 3) EXAMPLES AREA (separate area, different style) -->
+    <section class="area work" id="work" aria-label="Examples of my work">
+      <div class="area-head">
+        <h2 class="area-title">Examples of my work</h2>
+        <p class="area-note">Open each block</p>
       </div>
 
-      <div class="card span-6">
-        <div class="pad">
-          <div class="section-title">
-            <h2>Tracking & technical</h2>
-            <span class="note">Google / Meta / Microsoft / LinkedIn</span>
-          </div>
-          <ul>
-            <li>Conversion tracking</li>
-            <li>Enhanced Conversion tracking</li>
-            <li>Offline conversion tracking</li>
-            <li>Remarketing / Dynamic remarketing</li>
-            <li>Consent Mode</li>
-            <li>Server-Side Tracking</li>
-          </ul>
-        </div>
-      </div>
+      <div class="grid">
+        <div class="span-12">
+          <details class="acc">
+            <summary class="acc-sum">
+              Conversion Tracking
+              <span class="area-note">GA4 • Enhanced • Server-side</span>
+            </summary>
+            <div class="acc-body">
+              <p>Reliable tracking so campaign decisions are based on reality, not guesses.</p>
+              <ul>
+                <li>GA4 e-commerce funnel tracking (events + parameters)</li>
+                <li>Enhanced Conversions and Offline conversions</li>
+                <li>Consent Mode and (when needed) Server-Side Tracking</li>
+              </ul>
 
-      <div class="card span-12">
-        <div class="pad">
-          <div class="section-title">
-            <h2>Automations</h2>
-            <span class="note">Reduce manual work, speed up decisions</span>
-          </div>
-          <div class="tags">
-            <span class="tag">Data integration & sync</span>
-            <span class="tag">Workflow automation</span>
-            <span class="tag">Marketing automation</span>
-            <span class="tag">E-commerce automation</span>
-            <span class="tag">Reporting & analytics</span>
-            <span class="tag">Customer support automation</span>
-            <span class="tag">CRM automation</span>
-          </div>
+              <div class="mini-card">
+                <div class="pad">
+                  <strong style="display:block; margin-bottom:8px;">Example: GA4 e-commerce funnel setup</strong>
+                  <img
+                    src="https://prod-files-secure.s3.us-west-2.amazonaws.com/7241aac2-fbf2-4340-be4e-fba1818e3e5e/491444a4-a36e-4518-ba7c-e3aa2df0ea5c/Untitled.png"
+                    alt="GA4 ecommerce funnel implementation screenshot"
+                  />
+                  <p class="area-note" style="margin:10px 0 0;">Client wanted to track the purchase funnel in GA4. Screenshot shows successful implementation.</p>
+                </div>
+              </div>
+            </div>
+          </details>
         </div>
-      </div>
 
-      <div class="card span-12" id="contact">
-        <div class="pad">
-          <div class="section-title">
-            <h2>Contact</h2>
-            <span class="note">Fastest: LinkedIn / Upwork</span>
-          </div>
-          <div class="cta">
-            <a class="btn primary" href="https://www.linkedin.com/in/dmytro-ivanenko-09ba95197/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="btn" href="https://www.upwork.com/freelancers/~01d94beb9ccb6babe7" target="_blank" rel="noreferrer">Upwork</a>
-            <a class="btn" href="#prices">Pricing</a>
-          </div>
+        <div class="span-12">
+          <details class="acc">
+            <summary class="acc-sum">
+              PPC Marketing (Google Ads)
+              <span class="area-note">Audit • Optimization • Scaling</span>
+            </summary>
+            <div class="acc-body">
+              <p>Account structure + intent control + continuous optimization.</p>
+              <ul>
+                <li>Campaign setup and ongoing management</li>
+                <li>Keyword research, negatives, performance monitoring</li>
+                <li>Reporting with clear next steps</li>
+              </ul>
+
+              <div class="mini-card">
+                <div class="pad">
+                  <strong style="display:block; margin-bottom:8px;">Example: One-time account optimization</strong>
+                  <img
+                    src="https://prod-files-secure.s3.us-west-2.amazonaws.com/7241aac2-fbf2-4340-be4e-fba1818e3e5e/5046b570-4e86-4620-a490-c2700dac542d/Untitled.png"
+                    alt="Google Ads optimization results screenshot"
+                  />
+                  <p class="area-note" style="margin:10px 0 0;">
+                    Result: <strong>+240% revenue</strong> with only <strong>+15% costs</strong>.
+                  </p>
+                </div>
+              </div>
+
+              <div class="mini-card">
+                <div class="pad">
+                  <strong style="display:block; margin-bottom:6px;">Example: Ongoing account management</strong>
+                  <p class="area-note" style="margin:0;">
+                    Started: <strong>Jan 1, 2024</strong>. Revenue mix: ~60% leads, ~40% online shop.
+                    Target: purchase ROAS above <strong>215%</strong> + increase lead conversions.
+                    Turnover increased from <strong>123k/month avg (2023)</strong> to <strong>217k/month avg (2024)</strong>.
+                  </p>
+                  <p class="area-note" style="margin-top:10px;">
+                    Your original screenshot for this case uses an <code>attachment:</code> URL, which won’t load on a public site.
+                    Replace it with a hosted image URL (or a local file in your project).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <div class="span-12">
+          <details class="acc">
+            <summary class="acc-sum">
+              Automation
+              <span class="area-note">CRM • Workflows</span>
+            </summary>
+            <div class="acc-body">
+              <p>Automations for data sync, workflow speed, reporting, and CRM operations.</p>
+              <ul>
+                <li>Data integration and synchronization</li>
+                <li>Workflow + marketing + e-commerce automation</li>
+                <li>CRM automation and escalation logic</li>
+              </ul>
+
+              <div class="mini-card">
+                <div class="pad">
+                  <strong style="display:block; margin-bottom:6px;">Example: Pipedrive follow-up automation</strong>
+                  <p class="area-note" style="margin:0;">
+                    A B2B client needed an email to the manager if a lead didn’t respond to a price offer within 24 hours.
+                    Native Pipedrive automation didn’t support the exact workflow, so an external tool was used.
+                  </p>
+                  <p class="area-note" style="margin-top:10px;">
+                    Your original image for this item uses an <code>attachment:</code> URL. Replace with a hosted image URL.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <div class="span-12">
+          <details class="acc">
+            <summary class="acc-sum">
+              Cold Emailing
+              <span class="area-note">Outbound</span>
+            </summary>
+            <div class="acc-body">
+              <p>Outbound campaigns designed like systems: message → sequence → tracking → follow-up.</p>
+              <ul>
+                <li>ICP + value proposition packaging</li>
+                <li>Short sequences, clear CTA, structured follow-ups</li>
+                <li>Routing replies + notifications</li>
+              </ul>
+            </div>
+          </details>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="grid" id="projects" aria-label="Projects">
-      <div class="span-12">
-        <div class="section-title">
-          <h2>Some previous projects</h2>
-          <span class="note">Short, readable case cards</span>
-        </div>
+    <!-- 4) PRICING AREA (separate area) -->
+    <section class="area pricing" id="pricing" aria-label="Pricing">
+      <div class="area-head">
+        <h2 class="area-title">Pricing</h2>
+        <p class="area-note">Open to view</p>
       </div>
 
-      <article class="span-6">
-        <div class="proj">
-          <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/7241aac2-fbf2-4340-be4e-fba1818e3e5e/491444a4-a36e-4518-ba7c-e3aa2df0ea5c/Untitled.png" alt="GA4 ecommerce implementation screenshot" />
-          <div class="body">
-            <h3>GA4 e-commerce funnel setup</h3>
-            <p>The client needed GA4 e-commerce tracking to measure the purchase funnel. Screenshot shows successful implementation.</p>
-            <div class="chips">
-              <span class="chip">GA4</span>
-              <span class="chip green">E-commerce</span>
-              <span class="chip">Funnel tracking</span>
-            </div>
-          </div>
-        </div>
-      </article>
+      <div class="grid">
+        <div class="span-12">
+          <details class="acc">
+            <summary class="acc-sum">
+              Pricing 💸
+              <span class="area-note">Click to expand</span>
+            </summary>
+            <div class="acc-body">
+              <div class="price">
+                <div>
+                  <strong>One-time account audit</strong>
+                  <div class="area-note small">Google / Meta / Microsoft / LinkedIn / Amazon — report with next steps.</div>
+                </div>
+                <div class="val">$200</div>
+              </div>
 
-      <article class="span-6">
-        <div class="proj">
-          <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/7241aac2-fbf2-4340-be4e-fba1818e3e5e/5046b570-4e86-4620-a490-c2700dac542d/Untitled.png" alt="Google Ads optimization results screenshot" />
-          <div class="body">
-            <h3>One-time Google Ads optimization</h3>
-            <p>Account was optimized for growth. Result: <strong>+240% revenue</strong> with only <strong>+15% costs</strong>.</p>
-            <div class="chips">
-              <span class="chip">Google Ads</span>
-              <span class="chip pink">+240% revenue</span>
-              <span class="chip">Efficiency</span>
-            </div>
-          </div>
-        </div>
-      </article>
+              <div class="price">
+                <div>
+                  <strong>Campaign setup</strong>
+                  <div class="area-note small">Cost strongly depends on your business and scope.</div>
+                </div>
+                <div class="val">from $800</div>
+              </div>
 
-      <article class="span-6">
-        <div class="proj">
-          <div class="body">
-            <h3>Ongoing account management</h3>
-            <p>
-              Started: <strong>Jan 1, 2024</strong>. Revenue mix: ~60% leads, ~40% online shop.
-              Target: purchase ROAS above <strong>215%</strong> + higher lead conversions.
-            </p>
-            <p>
-              Impact: turnover increased from <strong>123k/month avg (2023)</strong> to <strong>217k/month avg (2024)</strong>.
-            </p>
-            <div class="chips">
-              <span class="chip">Scale</span>
-              <span class="chip green">ROAS &gt; 215%</span>
-              <span class="chip">Leads + purchases</span>
-            </div>
-            <p class="note" style="margin-top:10px">
-              Your original screenshot for this item is an <code>attachment:</code> URL and won’t load on a public site. Replace with a hosted image URL.
-            </p>
-          </div>
-        </div>
-      </article>
+              <div class="price">
+                <div>
+                  <strong>Campaign management</strong>
+                  <div class="area-note small">Cost strongly depends on your business and scope.</div>
+                </div>
+                <div class="val">from $500/mo</div>
+              </div>
 
-      <article class="span-6">
-        <div class="proj">
-          <div class="body">
-            <h3>Automation: Pipedrive follow-up</h3>
-            <p>
-              A B2B workflow: email the manager if a lead doesn’t respond to a price offer within 24 hours so the offer can be adjusted or discounted.
-              Native Pipedrive automation didn’t support it, so an external tool was used.
-            </p>
-            <div class="chips">
-              <span class="chip">CRM automation</span>
-              <span class="chip green">24h logic</span>
-              <span class="chip">External tooling</span>
+              <div class="price">
+                <div>
+                  <strong>Technical implementation</strong>
+                  <div class="area-note small">Tracking, consent mode, server-side, etc.</div>
+                </div>
+                <div class="val">$50/hour</div>
+              </div>
             </div>
-            <p class="note" style="margin-top:10px">
-              Same note: <code>attachment:</code> images won’t display publicly.
-            </p>
-          </div>
+          </details>
         </div>
-      </article>
+      </div>
     </section>
 
-    <!-- PRICES + VIDEOS + QUOTE -->
-    <section class="grid" id="prices">
-      <div class="card span-8">
-        <div class="pad">
-          <div class="section-title">
-            <h2>Prices 💸</h2>
-            <span class="note">Starting points</span>
-          </div>
-
-          <div class="price">
-            <div>
-              <strong>One-time account audit</strong>
-              <div class="note">Google / Meta / Microsoft / LinkedIn / Amazon — report with next steps.</div>
-            </div>
-            <div class="val">$200</div>
-          </div>
-
-          <div class="price">
-            <div>
-              <strong>Campaign setup</strong>
-              <div class="note">Depends on business and scope.</div>
-            </div>
-            <div class="val">from $800</div>
-          </div>
-
-          <div class="price">
-            <div>
-              <strong>Campaign management</strong>
-              <div class="note">Depends on business and scope.</div>
-            </div>
-            <div class="val">from $500/mo</div>
-          </div>
-
-          <div class="price">
-            <div>
-              <strong>Technical implementation</strong>
-              <div class="note">Tracking, consent mode, server-side, etc.</div>
-            </div>
-            <div class="val">$50/hour</div>
-          </div>
-        </div>
+    <!-- 5) CONTACT AREA (separate area) -->
+    <section class="area contact" id="contact" aria-label="Contact">
+      <div class="area-head">
+        <h2 class="area-title">Contact</h2>
+        <p class="area-note">4 quick actions</p>
       </div>
 
-      <div class="card span-4" id="videos">
-        <div class="pad">
-          <div class="section-title">
-            <h2>Videos</h2>
-            <span class="note">Links</span>
-          </div>
-          <ul>
-            <li>
-              Introduction:
-              <a href="https://youtu.be/CasHysfbm8o" target="_blank" rel="noreferrer">youtu.be/CasHysfbm8o</a>
-            </li>
-            <li>
-              What does a PPC specialist do?:
-              <a href="https://www.youtube.com/watch?v=bs7bHAk4iWs&ab_channel=UniversityofMiamiDigitalSkillsBootcamps" target="_blank" rel="noreferrer">
-                youtube.com/watch?v=bs7bHAk4iWs…
-              </a>
-            </li>
-          </ul>
+      <div class="cta">
+        <a class="btn primary" href="https://www.linkedin.com/in/dmytro-ivanenko-09ba95197/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="https://www.upwork.com/freelancers/~01d94beb9ccb6babe7" target="_blank" rel="noreferrer">Upwork</a>
 
-          <div style="height:12px"></div>
-
-          <div class="section-title">
-            <h2>Languages</h2>
-          </div>
-          <div class="tags">
-            <span class="tag">English</span>
-            <span class="tag">German</span>
-            <span class="tag">Polish</span>
-            <span class="tag">Ukrainian</span>
-          </div>
-        </div>
+        <!-- Replace placeholders with your real email + phone -->
+        <a class="btn" href="mailto:your@email.com">Email</a>
+        <a class="btn" href="tel:+48000000000">Phone</a>
       </div>
 
-      <div class="span-12">
-        <blockquote>
-          💡 <em>“Speak to your audience in their language about what’s in their heart.”</em>
-          <footer>— Jonathan Lister, VP Global Sales Solutions, LinkedIn.</footer>
-        </blockquote>
-      </div>
+      <p class="area-note" style="margin:12px 0 0;">
+        Replace <code>your@email.com</code> and <code>+48000000000</code> with your real contact details.
+      </p>
     </section>
 
     <footer class="site">
-      © <span id="y"></span> Dmytro — Digital Marketing Portfolio
+      © <span id="y"></span> Dmytro — Digital Marketing Expert
     </footer>
   </div>
 
