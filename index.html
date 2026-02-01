@@ -8,21 +8,17 @@
 
   <style>
     :root{
-      /* Monolithic (single) background */
-      --bg1:#101625;
-      --bg2:#0c1220;
+      /* Monolithic blue base (same top & bottom) */
+      --bg:#0e1630;
 
       /* UI */
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(255,255,255,.04);
       --line: rgba(255,255,255,.12);
-
       --text:#f2f5ff;
       --muted:#b6c1d7;
 
+      /* Accents */
       --accent:#6ee7ff;    /* cyan */
-      --accent2:#a78bfa;   /* violet */
-      --accent3:#34d399;   /* green */
+      --accent2:#60a5fa;   /* blue */
 
       --shadow: 0 18px 60px rgba(0,0,0,.45);
       --r:18px;
@@ -39,13 +35,17 @@
       color:var(--text);
       line-height:1.55;
 
-      /* ONE continuous background for the whole page */
+      /*
+        One continuous background:
+        - brighter spots in the MIDDLE of the page TOP and BOTTOM
+        - bottom uses the same base color (no green/violet shift)
+      */
       background:
-        radial-gradient(900px 520px at 18% 12%, rgba(167,139,250,.22), transparent 60%),
-        radial-gradient(860px 520px at 85% 16%, rgba(110,231,255,.16), transparent 60%),
-        radial-gradient(900px 560px at 55% 115%, rgba(52,211,153,.12), transparent 62%),
-        linear-gradient(180deg, var(--bg1), var(--bg2));
-      background-attachment: fixed; /* keeps it visually monolithic on scroll */
+        radial-gradient(900px 520px at 50% 12%, rgba(110,231,255,.20), transparent 62%),
+        radial-gradient(1000px 560px at 50% 52%, rgba(96,165,250,.12), transparent 65%),
+        radial-gradient(900px 520px at 50% 92%, rgba(110,231,255,.20), transparent 62%),
+        var(--bg);
+      background-attachment: fixed;
     }
 
     a{color:inherit; text-decoration:none}
@@ -66,8 +66,8 @@
       position:absolute;
       inset:-2px;
       background:
-        radial-gradient(760px 260px at 22% 18%, rgba(167,139,250,.25), transparent 60%),
-        radial-gradient(680px 240px at 78% 30%, rgba(110,231,255,.20), transparent 60%);
+        radial-gradient(760px 260px at 50% 20%, rgba(110,231,255,.18), transparent 60%),
+        radial-gradient(700px 260px at 60% 35%, rgba(96,165,250,.14), transparent 60%);
       filter: blur(10px);
       opacity:.9;
       pointer-events:none;
@@ -128,15 +128,15 @@
       align-items:center;
       padding:8px 12px;
       border-radius:999px;
-      border:1px solid rgba(52,211,153,.28);
-      background:rgba(52,211,153,.12);
+      border:1px solid rgba(110,231,255,.26);
+      background:rgba(110,231,255,.10);
       font-size:13px;
     }
     .dot{
       width:9px; height:9px;
       border-radius:999px;
-      background:var(--accent3);
-      box-shadow:0 0 0 6px rgba(52,211,153,.12);
+      background:var(--accent);
+      box-shadow:0 0 0 6px rgba(110,231,255,.12);
     }
 
     .nav{
@@ -156,10 +156,10 @@
     .pill:hover{transform:translateY(-1px); background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.20)}
     .pill.primary{
       border-color: rgba(110,231,255,.30);
-      background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(167,139,250,.10));
+      background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(96,165,250,.10));
     }
 
-    /* Sections (no section background colors — keeps monolithic feeling) */
+    /* Sections */
     .section{
       margin-top:22px;
       padding:20px;
@@ -222,17 +222,17 @@
     }
     .badge.focus{
       border-color: rgba(110,231,255,.42);
-      background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(167,139,250,.12));
+      background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(96,165,250,.12));
     }
     .desc{margin:8px 0 0; color:var(--muted); font-size:13.5px}
-    ul{margin:10px 0 0; padding-left:18px; color:var(--text)}
+    ul{margin:10px 0 0; padding-left:18px}
     li{margin:6px 0}
 
     /* Focus card */
     .focus-card{
       border-color: rgba(110,231,255,.30);
       background:
-        radial-gradient(620px 220px at 20% 10%, rgba(110,231,255,.14), transparent 60%),
+        radial-gradient(620px 220px at 50% 10%, rgba(110,231,255,.12), transparent 62%),
         rgba(0,0,0,.14);
     }
     .img{
@@ -315,7 +315,7 @@
     .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.20)}
     .btn.primary{
       border-color: rgba(110,231,255,.30);
-      background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(167,139,250,.10));
+      background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(96,165,250,.10));
     }
 
     code{
@@ -645,4 +645,3 @@
   </script>
 </body>
 </html>
-
