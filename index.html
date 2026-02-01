@@ -76,7 +76,6 @@
       line-height:1.05;
     }
 
-    /* bigger distance: title -> text */
     .lead{
       margin:26px 0 0;
       color:var(--muted);
@@ -85,7 +84,6 @@
     }
     .lead p{margin:0 0 12px;}
 
-    /* bigger distance: text -> highlight */
     .highlight{
       margin:30px 0 0;
       font-size:18px;
@@ -331,6 +329,12 @@
       background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(96,165,250,.10));
     }
 
+    /* ✅ Make button (Email) look identical to LinkedIn/Upwork */
+    button.btn{
+      font-family: inherit;
+      color: inherit;
+    }
+
     footer{
       margin-top:22px;
       text-align:center;
@@ -386,7 +390,7 @@
     <!-- PAY PER CLICK SERVICES -->
     <section class="section" id="ppc" aria-label="Pay Per Click services">
       <div class="head">
-        <h2 class="h2">Pay Per Click marketing services</h2>
+        <h2 class="h2">Paid marketing services</h2>
         <p class="hint">Google Ads is the main focus</p>
       </div>
 
@@ -626,112 +630,4 @@
 
     <!-- PRICES -->
     <section class="section" id="pricing" aria-label="Prices">
-      <div class="head">
-        <h2 class="h2">Prices</h2>
-        <p class="hint">Click to expand</p>
-      </div>
-
-      <details class="acc">
-        <summary class="acc-sum">
-          Prices
-          <span class="hint">Starting points</span>
-        </summary>
-        <div class="body">
-          <div class="row">
-            <div>
-              <strong>One-time account audit</strong>
-              <div class="hint">Google / Meta / Microsoft / LinkedIn / Amazon — report with next steps.</div>
-            </div>
-            <div class="val">from $200</div>
-          </div>
-
-          <div class="row">
-            <div>
-              <strong>Campaign setup</strong>
-              <div class="hint">Cost strongly depends on your business and scope.</div>
-            </div>
-            <div class="val">from $800</div>
-          </div>
-
-          <div class="row">
-            <div>
-              <strong>Campaign management</strong>
-              <div class="hint">Cost strongly depends on your business and scope.</div>
-            </div>
-            <div class="val">from $500/month</div>
-          </div>
-
-          <div class="row">
-            <div>
-              <strong>Technical implementation</strong>
-              <div class="hint">Tracking, consent mode, server-side, etc.</div>
-            </div>
-            <div class="val">$70/hour</div>
-          </div>
-        </div>
-      </details>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contact" aria-label="Contact">
-      <div class="head">
-        <h2 class="h2">Contact</h2>
-        <p class="hint">Quick actions</p>
-      </div>
-
-      <div class="contact-wrap">
-        <div>
-          <!-- Google Calendar Appointment Scheduling begin -->
-          <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-          <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-          <script>
-          (function() {
-            var target = document.currentScript;
-            window.addEventListener('load', function() {
-              calendar.schedulingButton.load({
-                url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3TNTUr-qLMO1UFzj-Kb0Ly2aywMk8n_yY-s9xp1N7YjJ6Fq9nVFB82Mg2uGC09jAD_x3tb5b_B?gv=true',
-                color: '#33B679',
-                label: "Book a 15 min call with Dmytro",
-                target,
-              });
-            });
-          })();
-          </script>
-          <!-- end Google Calendar Appointment Scheduling -->
-        </div>
-
-        <div class="cta">
-          <a class="btn contact" href="https://www.linkedin.com/in/dmytro-ivanenko-09ba95197/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn contact" href="https://www.upwork.com/freelancers/~01d94beb9ccb6babe7" target="_blank" rel="noreferrer">Upwork</a>
-          <button class="btn contact" id="emailBtn" type="button">Email</button>
-
-          <span id="emailReveal" style="display:none; color:rgba(242,245,255,.98); font-weight:900;">
-            dmytro.ivanenko3@gmail.com
-          </span>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="y"></span> Dmytro Ivanenko — Digital Marketing Expert
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-
-    // Reveal email on click
-    (function(){
-      var btn = document.getElementById("emailBtn");
-      var reveal = document.getElementById("emailReveal");
-      if(!btn || !reveal) return;
-
-      btn.addEventListener("click", function(){
-        var shown = reveal.style.display !== "none";
-        reveal.style.display = shown ? "none" : "inline";
-        btn.textContent = shown ? "Email" : "Hide email";
-      });
-    })();
-  </script>
-</body>
-</html>
+      <div class="
