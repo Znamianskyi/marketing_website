@@ -8,20 +8,12 @@
 
   <style>
     :root{
-      /* Monolithic blue base */
       --bg:#0e1630;
-
-      /* UI */
       --line: rgba(255,255,255,.12);
       --text:#f2f5ff;
       --muted:#b6c1d7;
-
-      /* Accents */
-      --accent:#6ee7ff;    /* cyan */
-      --accent2:#60a5fa;   /* blue */
-
+      --accent:#6ee7ff;
       --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --r:18px;
       --r2:28px;
       --max:1150px;
     }
@@ -34,7 +26,6 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
       line-height:1.55;
-
       background:
         radial-gradient(900px 520px at 50% 12%, rgba(110,231,255,.20), transparent 62%),
         radial-gradient(1000px 560px at 50% 52%, rgba(96,165,250,.12), transparent 65%),
@@ -46,7 +37,7 @@
     a{color:inherit; text-decoration:none}
     .container{max-width:var(--max); margin:0 auto; padding:28px 18px 90px}
 
-    /* Top hero */
+    /* HERO */
     .hero{
       border:1px solid var(--line);
       background:linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.04));
@@ -71,14 +62,13 @@
 
     /* HEADER LAYOUT */
     .hero-inner{
-      padding:22px 22px 16px;
+      padding:22px 22px 10px; /* less bottom padding to reduce whitespace */
       display:grid;
       grid-template-columns: 1fr 320px;
       gap:18px;
       align-items:start;
     }
 
-    /* Big title first */
     .big-role{
       margin:0;
       font-size:42px;
@@ -87,14 +77,15 @@
     }
 
     .lead{
-      margin:14px 0 0;
+      margin:12px 0 0; /* tighter */
       color:var(--muted);
       max-width:78ch;
       font-size:15px;
     }
+    .lead p{margin:0 0 10px;} /* tighter paragraphs */
 
     .highlight{
-      margin:14px 0 0;
+      margin:10px 0 0; /* tighter */
       font-size:16.5px;
       color:rgba(242,245,255,.92);
       font-weight:700;
@@ -105,29 +96,34 @@
       display:flex;
       flex-direction:column;
       align-items:stretch;
-      gap:10px;
+      gap:8px;           /* tighter */
       padding-top:4px;
     }
 
-    /* Photo: smaller + NOT CUT (contain) */
+    /* Photo: frame matches photo size (no "empty frame") */
     .avatar{
       width:100%;
-      height:240px;          /* a bit smaller */
-      object-fit:contain;    /* full image visible (no crop) */
+      height:220px;        /* slightly smaller */
+      object-fit:cover;    /* fills the frame, only corners clipped by border radius */
       border-radius:22px;
       border:1px solid rgba(255,255,255,.18);
       box-shadow:0 18px 46px rgba(0,0,0,.38);
-      background:rgba(0,0,0,.12);
+      background:transparent; /* no visible gap/background */
+      display:block;
     }
 
+    /* Name brighter + bigger (similar “brightness” to frame) */
     .right-name{
       margin:0;
-      font-size:16px;
-      font-weight:800;
-      color:rgba(242,245,255,.92);
+      font-size:20px;
+      font-weight:900;
+      color:rgba(242,245,255,.98);
       text-align:center;
+      letter-spacing:-.2px;
+      text-shadow: 0 8px 22px rgba(0,0,0,.35);
     }
 
+    /* Status moved down: align with menu height visually */
     .status{
       display:inline-flex;
       justify-content:center;
@@ -139,6 +135,7 @@
       background:rgba(110,231,255,.10);
       font-size:13px;
       width:100%;
+      margin-top:18px; /* pushes it toward menu level */
     }
     .dot{
       width:9px; height:9px;
@@ -148,10 +145,12 @@
     }
 
     .nav{
-      padding:0 22px 20px;
+      padding:0 22px 14px; /* a bit less bottom padding */
       display:flex;
       gap:10px;
       flex-wrap:wrap;
+      align-items:center;
+      margin-top:-6px; /* pulls menu slightly upward to reduce whitespace */
     }
     .pill{
       padding:9px 12px;
@@ -167,7 +166,7 @@
       background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(96,165,250,.10));
     }
 
-    /* Sections */
+    /* Sections (unchanged) */
     .section{
       margin-top:22px;
       padding:20px;
@@ -206,9 +205,9 @@
       .span-6,.span-4{grid-column: span 12}
       .big-role{font-size:36px}
       .avatar{height:220px}
+      .status{margin-top:10px}
     }
 
-    /* Service cards */
     .card{
       border:1px solid rgba(255,255,255,.12);
       background:rgba(0,0,0,.14);
@@ -299,14 +298,20 @@
     .row:first-child{border-top:0; padding-top:2px}
     .val{white-space:nowrap; font-weight:900}
 
-    /* Contact buttons: LinkedIn style */
+    /* Contact UX: separate booking from other actions */
+    .contact-wrap{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
     .cta{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      margin-top:12px;
       align-items:center;
     }
+
     .btn{
       display:inline-flex;
       align-items:center;
@@ -325,8 +330,8 @@
       border-color: rgba(110,231,255,.30);
       background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(96,165,250,.10));
     }
-    /* Make all contact buttons look like LinkedIn button */
-    .btn.contact{ /* same style as primary */
+    /* “LinkedIn button style” applied to the 3 action buttons */
+    .btn.contact{
       border-color: rgba(110,231,255,.30);
       background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(96,165,250,.10));
     }
@@ -343,7 +348,7 @@
 <body>
   <div class="container">
 
-    <!-- TOP HERO (only header changed as requested) -->
+    <!-- TOP HERO -->
     <section class="hero" id="top">
       <div class="hero-inner">
         <div>
@@ -375,9 +380,9 @@
       </div>
 
       <nav class="nav" aria-label="Page navigation">
-        <a class="pill" href="#ppc">Pay Per Click services</a>
+        <a class="pill" href="#ppc">Pay Per Click marketing services</a>
         <a class="pill" href="#technical">Technical services</a>
-        <a class="pill" href="#work">Examples</a>
+        <a class="pill" href="#work">Examples of work</a>
         <a class="pill" href="#pricing">Prices</a>
         <a class="pill primary" href="#contact">Contact</a>
       </nav>
@@ -386,7 +391,7 @@
     <!-- PAY PER CLICK SERVICES (unchanged) -->
     <section class="section" id="ppc" aria-label="Pay Per Click services">
       <div class="head">
-        <h2 class="h2">Pay Per Click services</h2>
+        <h2 class="h2">Pay Per Click marketing services</h2>
         <p class="hint">Google Ads is the main focus</p>
       </div>
 
@@ -400,9 +405,12 @@
               </div>
               <p class="desc">Strategy, setup, optimization, and reporting with scalable performance.</p>
               <ul>
-                <li>Account structure, bidding strategy, keyword research</li>
-                <li>Search terms control + negatives</li>
-                <li>Measurement-first approach (clean conversion data)</li>
+  <li>Strategy & account structure</li>
+  <li>Campaign setup + continuous optimization for revenue</li>
+  <li>Bidding strategy management + budget allocation control</li>
+  <li>Keyword research, search terms analysis, and negative keyword</li>
+  <li>Performance monitoring + iterative improvements based on data</li>
+  <li>Reporting to stakeholders with clear next actions</li>
               </ul>
             </div>
           </div>
@@ -417,9 +425,12 @@
               </div>
               <p class="desc">Prospecting + remarketing with tracking you can trust.</p>
               <ul>
-                <li>Testing structure for creative and audiences</li>
-                <li>Dynamic remarketing</li>
-                <li>Iterative optimization</li>
+  <li>Full-funnel strategy (prospecting + retargeting)</li>
+  <li>Campaign setup with clean testing structure</li>
+  <li>Budget & bidding optimization to improve CPA/ROAS</li>
+  <li>Creative and audience testing (A/B approach)</li>
+  <li>Performance monitoring + fast iteration based on results</li>
+  <li>Clear reporting and recommendations</li>
               </ul>
             </div>
           </div>
@@ -434,8 +445,12 @@
               </div>
               <p class="desc">Extra search volume beyond Google with tight query control.</p>
               <ul>
-                <li>Shopping + Search</li>
-                <li>Query hygiene</li>
+  <li>Strategy + campaign setup</li>
+  <li>Bidding strategy and budget optimization</li>
+  <li>Keyword research and query control</li>
+  <li>Performance monitoring + optimization</li>
+  <li>Expansion opportunities and efficiency improvements</li>
+  <li>Reporting and actionable insights</li>
               </ul>
             </div>
           </div>
@@ -450,8 +465,11 @@
               </div>
               <p class="desc">Lead gen built around quality, not vanity metrics.</p>
               <ul>
-                <li>Lead forms + CRM handoff</li>
-                <li>ABM-style targeting</li>
+  <li>B2B campaign strategy for lead generation</li>
+  <li>Campaign setup</li>
+  <li>Targeting refinement (roles, industries, company sizes)</li>
+  <li>Performance monitoring + CPL/quality optimization</li>
+  <li>Reporting with clear optimization actions</li>
               </ul>
             </div>
           </div>
@@ -466,8 +484,12 @@
               </div>
               <p class="desc">Sponsored Products / Brands / Display with measurable performance.</p>
               <ul>
-                <li>Structure, targeting, negatives</li>
-                <li>Budget control + scaling</li>
+  <li>Sponsored Products / Sponsored Brands / Sponsored Display setup</li>
+  <li>Keyword + product targeting strategy</li>
+  <li>Search term analysis + negative targeting</li>
+  <li>Performance monitoring + continuous optimization</li>
+  <li>Reporting focused on revenue impact</li>
+               
               </ul>
             </div>
           </div>
@@ -492,9 +514,9 @@
               </div>
               <p class="desc">End-to-end measurement so you can trust performance numbers.</p>
               <ul>
-                <li>GA4 events + e-commerce funnels</li>
-                <li>Enhanced Conversions + Offline conversions</li>
-                <li>Consent Mode and validation</li>
+                <li>Conversion tracking setup/optimization</li>
+                <li>Enhanced conversions + Offline conversions</li>
+                <li>Consent Mode and Server Site Tracking</li>
               </ul>
             </div>
           </div>
@@ -509,9 +531,9 @@
               </div>
               <p class="desc">Data sync, reporting, and CRM workflows that reduce manual work.</p>
               <ul>
-                <li>Workflow automation and escalation logic</li>
-                <li>Reporting automation</li>
-                <li>CRM routing + notifications</li>
+                <li>Workflow and Dataflow automations</li>
+                <li>Automated reporting</li>
+                <li>CRM routing, Notifications and more</li>
               </ul>
             </div>
           </div>
@@ -586,7 +608,7 @@
 
       <details class="acc">
         <summary class="acc-sum">
-          Prices 💸
+          Prices
           <span class="hint">Starting points</span>
         </summary>
         <div class="body">
@@ -595,7 +617,7 @@
               <strong>One-time account audit</strong>
               <div class="hint">Google / Meta / Microsoft / LinkedIn / Amazon — report with next steps.</div>
             </div>
-            <div class="val">$200</div>
+            <div class="val">from $200</div>
           </div>
 
           <div class="row">
@@ -611,7 +633,7 @@
               <strong>Campaign management</strong>
               <div class="hint">Cost strongly depends on your business and scope.</div>
             </div>
-            <div class="val">from $500/mo</div>
+            <div class="val">from $500/month</div>
           </div>
 
           <div class="row">
@@ -619,49 +641,51 @@
               <strong>Technical implementation</strong>
               <div class="hint">Tracking, consent mode, server-side, etc.</div>
             </div>
-            <div class="val">$50/hour</div>
+            <div class="val">$70/hour</div>
           </div>
         </div>
       </details>
     </section>
 
-    <!-- CONTACT (updated per request) -->
+    <!-- CONTACT (UX improved; booking separate; other buttons not on same line) -->
     <section class="section" id="contact" aria-label="Contact">
       <div class="head">
         <h2 class="h2">Contact</h2>
         <p class="hint">Quick actions</p>
       </div>
 
-      <p style="margin:0; color:var(--muted);">Book a free 15 min call with Dmytro</p>
-
-      <div class="cta">
-        <!-- Calendar button FIRST; label updated -->
-        <!-- Google Calendar Appointment Scheduling begin -->
-        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-        <script>
-        (function() {
-          var target = document.currentScript;
-          window.addEventListener('load', function() {
-            calendar.schedulingButton.load({
-              url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3TNTUr-qLMO1UFzj-Kb0Ly2aywMk8n_yY-s9xp1N7YjJ6Fq9nVFB82Mg2uGC09jAD_x3tb5b_B?gv=true',
-              color: '#33B679',
-              label: "Book a 15 min call with Dmytro",
-              target,
+      <div class="contact-wrap">
+        <!-- Booking button (alone) -->
+        <div>
+          <!-- Google Calendar Appointment Scheduling begin -->
+          <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+          <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+          <script>
+          (function() {
+            var target = document.currentScript;
+            window.addEventListener('load', function() {
+              calendar.schedulingButton.load({
+                url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3TNTUr-qLMO1UFzj-Kb0Ly2aywMk8n_yY-s9xp1N7YjJ6Fq9nVFB82Mg2uGC09jAD_x3tb5b_B?gv=true',
+                color: '#33B679',
+                label: "Book a 15 min call with Dmytro",
+                target,
+              });
             });
-          });
-        })();
-        </script>
-        <!-- end Google Calendar Appointment Scheduling -->
+          })();
+          </script>
+          <!-- end Google Calendar Appointment Scheduling -->
+        </div>
 
-        <!-- Next 3 buttons (same style as LinkedIn button) -->
-        <a class="btn contact" href="https://www.linkedin.com/in/dmytro-ivanenko-09ba95197/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="btn contact" href="https://www.upwork.com/freelancers/~01d94beb9ccb6babe7" target="_blank" rel="noreferrer">Upwork</a>
-        <button class="btn contact" id="emailBtn" type="button">Email</button>
+        <!-- Secondary actions (separate row / better UX) -->
+        <div class="cta">
+          <a class="btn contact" href="https://www.linkedin.com/in/dmytro-ivanenko-09ba95197/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn contact" href="https://www.upwork.com/freelancers/~01d94beb9ccb6babe7" target="_blank" rel="noreferrer">Upwork</a>
+          <button class="btn contact" id="emailBtn" type="button">Email</button>
 
-        <span id="emailReveal" style="display:none; color:rgba(242,245,255,.92); font-weight:800;">
-          dmytro.ivanenko3@gmail.com
-        </span>
+          <span id="emailReveal" style="display:none; color:rgba(242,245,255,.98); font-weight:900;">
+            dmytro.ivanenko3@gmail.com
+          </span>
+        </div>
       </div>
     </section>
 
@@ -688,7 +712,4 @@
   </script>
 </body>
 </html>
-
-
-
 
