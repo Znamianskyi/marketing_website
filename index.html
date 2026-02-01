@@ -14,7 +14,6 @@
       --muted:#b6c1d7;
       --accent:#6ee7ff;
       --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --r2:28px दिख;
       --r2:28px;
       --max:1150px;
     }
@@ -24,7 +23,7 @@
 
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
       line-height:1.55;
       background:
@@ -61,10 +60,11 @@
     }
     .hero > *{position:relative; z-index:1}
 
+    /* HEADER LAYOUT */
     .hero-inner{
-      padding:22px 22px 10px;
+      padding:22px 22px 10px; /* less bottom padding to reduce whitespace */
       display:grid;
-      grid-template-columns: 1fr 260px;
+      grid-template-columns: 1fr 320px;
       gap:18px;
       align-items:start;
     }
@@ -76,13 +76,84 @@
       line-height:1.05;
     }
 
-    /* MENU in header-left */
+    .lead{
+      margin:12px 0 0; /* tighter */
+      color:var(--muted);
+      max-width:78ch;
+      font-size:15px;
+    }
+    .lead p{margin:0 0 10px;} /* tighter paragraphs */
+
+    /* ⬇️ Highlight: bigger + moved 2 paragraphs down (after lead) */
+    .highlight{
+      margin:18px 0 0;
+      font-size:18px;
+      color:rgba(242,245,255,.96);
+      font-weight:800;
+      letter-spacing:-.2px;
+      text-shadow: 0 10px 24px rgba(0,0,0,.35);
+    }
+
+    /* Right side: photo + name + status */
+    .hero-right{
+      display:flex;
+      flex-direction:column;
+      align-items:center; /* align with other elements in the block */
+      gap:8px;           /* tighter */
+      padding-top:4px;
+    }
+
+    /* Photo: 200px × 240px and aligned */
+    .avatar{
+      width:200px;
+      height:240px;
+      object-fit:cover;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow:0 18px 46px rgba(0,0,0,.38);
+      background:transparent;
+      display:block;
+    }
+
+    /* Name brighter + bigger */
+    .right-name{
+      margin:0;
+      font-size:20px;
+      font-weight:900;
+      color:rgba(242,245,255,.98);
+      text-align:center;
+      letter-spacing:-.2px;
+      text-shadow: 0 8px 22px rgba(0,0,0,.35);
+    }
+
+    /* Status moved down: align with menu height visually */
+    .status{
+      display:inline-flex;
+      justify-content:center;
+      gap:10px;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(110,231,255,.26);
+      background:rgba(110,231,255,.10);
+      font-size:13px;
+      width:100%;
+      margin-top:18px; /* pushes it toward menu level */
+    }
+    .dot{
+      width:9px; height:9px;
+      border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 0 6px rgba(110,231,255,.12);
+    }
+
     .nav{
-      margin-top:12px;              /* menu placed before highlight + description */
+      padding:0 22px 14px; /* a bit less bottom padding */
       display:flex;
       gap:10px;
       flex-wrap:wrap;
       align-items:center;
+      margin-top:-6px; /* pulls menu slightly upward to reduce whitespace */
     }
     .pill{
       padding:9px 12px;
@@ -98,70 +169,7 @@
       background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(96,165,250,.10));
     }
 
-    /* Highlight moved between menu and description + slightly bigger */
-    .highlight{
-      margin:12px 0 0;
-      font-size:18px;
-      font-weight:800;
-      color:#f6f8ff;
-      letter-spacing:-.2px;
-      text-shadow:0 10px 24px rgba(0,0,0,.35);
-    }
-
-    .lead{
-      margin:12px 0 0;
-      color:var(--muted);
-      max-width:78ch;
-      font-size:15px;
-    }
-    .lead p{margin:0 0 10px}
-
-    /* Right side */
-    .hero-right{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:6px;
-      padding-top:6px;
-    }
-    .avatar{
-      width:200px;
-      height:240px;
-      object-fit:cover;
-      border-radius:22px;
-      border:1px solid rgba(255,255,255,.18);
-      box-shadow:0 18px 46px rgba(0,0,0,.38);
-      display:block;
-    }
-    .right-name{
-      margin:2px 0 0;
-      font-size:20px;
-      font-weight:900;
-      color:#f6f8ff;
-      text-align:center;
-      letter-spacing:-.2px;
-      text-shadow:0 8px 22px rgba(0,0,0,.35);
-    }
-    .status{
-      margin-top:10px;
-      display:inline-flex;
-      justify-content:center;
-      align-items:center;
-      gap:10px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(110,231,255,.26);
-      background:rgba(110,231,255,.10);
-      font-size:13px;
-      width:100%;
-    }
-    .dot{
-      width:9px;height:9px;border-radius:50%;
-      background:var(--accent);
-      box-shadow:0 0 0 6px rgba(110,231,255,.12);
-    }
-
-    /* Sections */
+    /* Sections (unchanged) */
     .section{
       margin-top:22px;
       padding:20px;
@@ -179,25 +187,29 @@
       gap:12px;
       margin-bottom:14px;
     }
-    .h2{margin:0;font-size:22px;letter-spacing:-.35px}
-    .hint{margin:0;color:var(--muted);font-size:13px}
+    .h2{
+      margin:0;
+      font-size:22px;
+      letter-spacing:-.35px;
+    }
+    .hint{margin:0; color:var(--muted); font-size:13px}
 
     .grid{
       display:grid;
-      grid-template-columns:repeat(12,1fr);
+      grid-template-columns: repeat(12, 1fr);
       gap:14px;
     }
-    .span-12{grid-column:span 12}
-    .span-6{grid-column:span 6}
-    .span-4{grid-column:span 4}
-
+    .span-12{grid-column: span 12}
+    .span-6{grid-column: span 6}
+    .span-4{grid-column: span 4}
     @media (max-width: 980px){
-      .hero-inner{grid-template-columns:1fr}
+      .hero-inner{grid-template-columns:1fr;}
+      .hero-right{order:2}
+      .span-6,.span-4{grid-column: span 12}
       .big-role{font-size:36px}
-      .span-6,.span-4{grid-column:span 12}
+      .status{margin-top:10px}
     }
 
-    /* Cards */
     .card{
       border:1px solid rgba(255,255,255,.12);
       background:rgba(0,0,0,.14);
@@ -205,8 +217,13 @@
       overflow:hidden;
     }
     .card .pad{padding:14px}
-    .kicker{display:flex;align-items:center;justify-content:space-between;gap:10px}
-    .title2{margin:0;font-size:15px;font-weight:850}
+    .kicker{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .title2{margin:0; font-size:15px; font-weight:850}
     .badge{
       font-size:12px;
       color:var(--text);
@@ -220,8 +237,8 @@
       border-color: rgba(110,231,255,.42);
       background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(96,165,250,.12));
     }
-    .desc{margin:8px 0 0;color:var(--muted);font-size:13.5px}
-    ul{margin:10px 0 0;padding-left:18px}
+    .desc{margin:8px 0 0; color:var(--muted); font-size:13.5px}
+    ul{margin:10px 0 0; padding-left:18px}
     li{margin:6px 0}
 
     .focus-card{
@@ -231,7 +248,6 @@
         rgba(0,0,0,.14);
     }
 
-    /* Accordions */
     details.acc{
       border:1px solid rgba(255,255,255,.12);
       background:rgba(0,0,0,.14);
@@ -251,7 +267,9 @@
     }
     summary.acc-sum::-webkit-details-marker{display:none}
     .body{padding:0 14px 14px}
-    .body p{margin:0;color:var(--muted)}
+    .body p{margin:0; color:var(--muted)}
+    .body ul{margin:10px 0 0}
+
     .mini-card{
       margin-top:12px;
       border:1px solid rgba(255,255,255,.12);
@@ -259,9 +277,11 @@
       border-radius:18px;
       padding:12px;
     }
+
     .example-img{
       width:100%;
       height:auto;
+      max-height:none;
       object-fit:contain;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.10);
@@ -270,7 +290,6 @@
       background:rgba(0,0,0,.10);
     }
 
-    /* Pricing rows */
     .row{
       display:flex;
       justify-content:space-between;
@@ -278,12 +297,22 @@
       padding:12px 0;
       border-top:1px solid rgba(255,255,255,.10);
     }
-    .row:first-child{border-top:0;padding-top:2px}
-    .val{white-space:nowrap;font-weight:900}
+    .row:first-child{border-top:0; padding-top:2px}
+    .val{white-space:nowrap; font-weight:900}
 
-    /* Contact UX */
-    .contact-wrap{display:flex;flex-direction:column;gap:12px}
-    .cta-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    /* Contact UX: separate booking from other actions */
+    .contact-wrap{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
 
     .btn{
       display:inline-flex;
@@ -294,11 +323,15 @@
       border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.04);
       font-size:13px;
-      cursor:pointer;
       transition:transform .15s ease, background .15s ease, border-color .15s ease;
+      cursor:pointer;
       user-select:none;
     }
     .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.20)}
+    .btn.primary{
+      border-color: rgba(110,231,255,.30);
+      background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(96,165,250,.10));
+    }
     .btn.contact{
       border-color: rgba(110,231,255,.30);
       background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(96,165,250,.10));
@@ -316,54 +349,55 @@
 <body>
   <div class="container">
 
-    <!-- HEADER -->
+    <!-- TOP HERO -->
     <section class="hero" id="top">
       <div class="hero-inner">
         <div>
           <h1 class="big-role">Digital Marketing Expert</h1>
 
-          <!-- MENU -->
-          <nav class="nav" aria-label="Page navigation">
-            <a class="pill" href="#ppc">Pay Per Click services</a>
-            <a class="pill" href="#technical">Technical services</a>
-            <a class="pill" href="#work">Examples</a>
-            <a class="pill" href="#pricing">Prices</a>
-            <a class="pill primary" href="#contact">Contact</a>
-          </nav>
-
-          <!-- HIGHLIGHT BETWEEN MENU AND DESCRIPTION -->
-          <div class="highlight">
-            Former Google Ads consultant. Relying on data – no guessing.
-          </div>
-
-          <!-- DESCRIPTION -->
           <div class="lead">
             <p>Most companies run ads, but very few run a system that turns traffic into revenue.</p>
+
             <p>
               I help companies rebuild their paid marketing the right way:<br>
               clean tracking, disciplined testing, and campaigns optimized for revenue, not clicks.
             </p>
-            <p>Google Ads, Meta, Amazon, analytics, and automation — one accountable owner.</p>
+
+            <p>
+              Google Ads, Meta, Amazon, analytics, and automation — one accountable owner.
+            </p>
+          </div>
+
+          <!-- moved 2 paragraphs down (now AFTER lead) -->
+          <div class="highlight">
+            Former Google Ads consultant. Relying on data – no guessing.
           </div>
         </div>
 
         <div class="hero-right">
           <img class="avatar" src="dmytro.jpg" alt="Dmytro Ivanenko photo" />
-          <div class="right-name">Dmytro Ivanenko</div>
+          <p class="right-name">Dmytro Ivanenko</p>
           <div class="status"><span class="dot" aria-hidden="true"></span> Open for new projects ✅</div>
         </div>
       </div>
+
+      <nav class="nav" aria-label="Page navigation">
+        <a class="pill" href="#ppc">Pay Per Click marketing services</a>
+        <a class="pill" href="#technical">Technical services</a>
+        <a class="pill" href="#work">Examples of work</a>
+        <a class="pill" href="#pricing">Prices</a>
+        <a class="pill primary" href="#contact">Contact</a>
+      </nav>
     </section>
 
-    <!-- 1) PAY PER CLICK SERVICES -->
+    <!-- PAY PER CLICK SERVICES (unchanged) -->
     <section class="section" id="ppc" aria-label="Pay Per Click services">
       <div class="head">
-        <h2 class="h2">Pay Per Click services</h2>
+        <h2 class="h2">Pay Per Click marketing services</h2>
         <p class="hint">Google Ads is the main focus</p>
       </div>
 
       <div class="grid">
-        <!-- Google Ads -->
         <div class="span-6">
           <div class="card focus-card">
             <div class="pad">
@@ -373,10 +407,10 @@
               </div>
               <p class="desc">Strategy, setup, optimization, and reporting with scalable performance.</p>
               <ul>
-                <li>Strategy & account structure (Search / Shopping / Performance Max)</li>
-                <li>Campaign setup + continuous optimization for revenue (not clicks)</li>
+                <li>Strategy & account structure</li>
+                <li>Campaign setup + continuous optimization for revenue</li>
                 <li>Bidding strategy management + budget allocation control</li>
-                <li>Keyword research, search terms analysis, and negative keyword hygiene</li>
+                <li>Keyword research, search terms analysis, and negative keyword</li>
                 <li>Performance monitoring + iterative improvements based on data</li>
                 <li>Reporting to stakeholders with clear next actions</li>
               </ul>
@@ -384,7 +418,6 @@
           </div>
         </div>
 
-        <!-- Meta -->
         <div class="span-6">
           <div class="card">
             <div class="pad">
@@ -405,7 +438,6 @@
           </div>
         </div>
 
-        <!-- Microsoft -->
         <div class="span-4">
           <div class="card">
             <div class="pad">
@@ -415,18 +447,17 @@
               </div>
               <p class="desc">Extra search volume beyond Google with tight query control.</p>
               <ul>
-                <li>Strategy + campaign setup (Search / Shopping)</li>
+                <li>Strategy + campaign setup</li>
                 <li>Bidding strategy and budget optimization</li>
                 <li>Keyword research and query control</li>
-                <li>Performance monitoring + optimization cycles</li>
-                <li>Efficiency improvements based on results</li>
+                <li>Performance monitoring + optimization</li>
+                <li>Expansion opportunities and efficiency improvements</li>
                 <li>Reporting and actionable insights</li>
               </ul>
             </div>
           </div>
         </div>
 
-        <!-- LinkedIn -->
         <div class="span-4">
           <div class="card">
             <div class="pad">
@@ -437,9 +468,8 @@
               <p class="desc">Lead gen built around quality, not vanity metrics.</p>
               <ul>
                 <li>B2B campaign strategy for lead generation</li>
-                <li>Campaign setup (incl. Lead Gen Forms when relevant)</li>
+                <li>Campaign setup</li>
                 <li>Targeting refinement (roles, industries, company sizes)</li>
-                <li>Testing ads and offers to increase lead quality</li>
                 <li>Performance monitoring + CPL/quality optimization</li>
                 <li>Reporting with clear optimization actions</li>
               </ul>
@@ -447,7 +477,6 @@
           </div>
         </div>
 
-        <!-- Amazon -->
         <div class="span-4">
           <div class="card">
             <div class="pad">
@@ -457,9 +486,8 @@
               </div>
               <p class="desc">Sponsored Products / Brands / Display with measurable performance.</p>
               <ul>
-                <li>Sponsored Products / Brands / Display setup</li>
+                <li>Sponsored Products / Sponsored Brands / Sponsored Display setup</li>
                 <li>Keyword + product targeting strategy</li>
-                <li>Bidding and budget optimization for profitable growth</li>
                 <li>Search term analysis + negative targeting</li>
                 <li>Performance monitoring + continuous optimization</li>
                 <li>Reporting focused on revenue impact</li>
@@ -470,7 +498,7 @@
       </div>
     </section>
 
-    <!-- 2) TECHNICAL SERVICES -->
+    <!-- TECHNICAL SERVICES (unchanged) -->
     <section class="section" id="technical" aria-label="Technical services">
       <div class="head">
         <h2 class="h2">Technical services</h2>
@@ -487,12 +515,9 @@
               </div>
               <p class="desc">End-to-end measurement so you can trust performance numbers.</p>
               <ul>
-                <li>Conversion tracking setup and validation</li>
-                <li>Enhanced Conversions (lead + purchase)</li>
-                <li>Offline conversion tracking</li>
-                <li>Remarketing / Dynamic remarketing</li>
-                <li>Consent Mode implementation and testing</li>
-                <li>Server-Side Tracking (when needed)</li>
+                <li>Conversion tracking setup/optimization</li>
+                <li>Enhanced conversions + Offline conversions</li>
+                <li>Consent Mode and Server Site Tracking</li>
               </ul>
             </div>
           </div>
@@ -505,14 +530,11 @@
                 <h3 class="title2">Automation</h3>
                 <span class="badge">CRM • Workflows</span>
               </div>
-              <p class="desc">Automations that reduce manual work and speed up revenue workflows.</p>
+              <p class="desc">Data sync, reporting, and CRM workflows that reduce manual work.</p>
               <ul>
-                <li>Data integration and synchronization</li>
-                <li>Workflow automation (sales/ops processes)</li>
-                <li>Marketing automation and reporting</li>
-                <li>E-commerce automation</li>
-                <li>Customer support automation</li>
-                <li>CRM automation</li>
+                <li>Workflow and Dataflow automations</li>
+                <li>Automated reporting</li>
+                <li>CRM routing, Notifications and more</li>
               </ul>
             </div>
           </div>
@@ -520,7 +542,7 @@
       </div>
     </section>
 
-    <!-- 3) EXAMPLES -->
+    <!-- EXAMPLES (unchanged) -->
     <section class="section" id="work" aria-label="Examples of work">
       <div class="head">
         <h2 class="h2">Examples of my work</h2>
@@ -578,7 +600,7 @@
       </div>
     </section>
 
-    <!-- 4) PRICES -->
+    <!-- PRICES (unchanged) -->
     <section class="section" id="pricing" aria-label="Prices">
       <div class="head">
         <h2 class="h2">Prices</h2>
@@ -587,7 +609,7 @@
 
       <details class="acc">
         <summary class="acc-sum">
-          Prices 💸
+          Prices
           <span class="hint">Starting points</span>
         </summary>
         <div class="body">
@@ -596,7 +618,7 @@
               <strong>One-time account audit</strong>
               <div class="hint">Google / Meta / Microsoft / LinkedIn / Amazon — report with next steps.</div>
             </div>
-            <div class="val">$200</div>
+            <div class="val">from $200</div>
           </div>
 
           <div class="row">
@@ -612,7 +634,7 @@
               <strong>Campaign management</strong>
               <div class="hint">Cost strongly depends on your business and scope.</div>
             </div>
-            <div class="val">from $500/mo</div>
+            <div class="val">from $500/month</div>
           </div>
 
           <div class="row">
@@ -620,13 +642,13 @@
               <strong>Technical implementation</strong>
               <div class="hint">Tracking, consent mode, server-side, etc.</div>
             </div>
-            <div class="val">$50/hour</div>
+            <div class="val">$70/hour</div>
           </div>
         </div>
       </details>
     </section>
 
-    <!-- 5) CONTACT -->
+    <!-- CONTACT -->
     <section class="section" id="contact" aria-label="Contact">
       <div class="head">
         <h2 class="h2">Contact</h2>
@@ -634,7 +656,6 @@
       </div>
 
       <div class="contact-wrap">
-        <!-- Booking button -->
         <div>
           <!-- Google Calendar Appointment Scheduling begin -->
           <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
@@ -655,13 +676,12 @@
           <!-- end Google Calendar Appointment Scheduling -->
         </div>
 
-        <!-- Secondary actions -->
-        <div class="cta-row">
+        <div class="cta">
           <a class="btn contact" href="https://www.linkedin.com/in/dmytro-ivanenko-09ba95197/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a class="btn contact" href="https://www.upwork.com/freelancers/~01d94beb9ccb6babe7" target="_blank" rel="noreferrer">Upwork</a>
           <button class="btn contact" id="emailBtn" type="button">Email</button>
 
-          <span id="emailReveal" style="display:none; color:#f6f8ff; font-weight:900;">
+          <span id="emailReveal" style="display:none; color:rgba(242,245,255,.98); font-weight:900;">
             dmytro.ivanenko3@gmail.com
           </span>
         </div>
@@ -676,7 +696,7 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    // Reveal/hide email on click
+    // Reveal email on click
     (function(){
       var btn = document.getElementById("emailBtn");
       var reveal = document.getElementById("emailReveal");
