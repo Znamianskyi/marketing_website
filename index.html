@@ -62,7 +62,7 @@
 
     /* HEADER LAYOUT */
     .hero-inner{
-      padding:22px 22px 10px; /* less bottom padding to reduce whitespace */
+      padding:22px 22px 10px;
       display:grid;
       grid-template-columns: 1fr 320px;
       gap:18px;
@@ -76,17 +76,18 @@
       line-height:1.05;
     }
 
+    /* ✅ bigger distance: title -> text */
     .lead{
-      margin:12px 0 0; /* tighter */
+      margin:26px 0 0; /* was 12px */
       color:var(--muted);
       max-width:78ch;
       font-size:15px;
     }
-    .lead p{margin:0 0 10px;} /* tighter paragraphs */
+    .lead p{margin:0 0 12px;} /* slightly more breathing room */
 
-    /* ⬇️ Highlight: bigger + moved 2 paragraphs down (after lead) */
+    /* ✅ bigger distance: text -> highlight */
     .highlight{
-      margin:18px 0 0;
+      margin:30px 0 0; /* was 18px */
       font-size:18px;
       color:rgba(242,245,255,.96);
       font-weight:800;
@@ -98,12 +99,11 @@
     .hero-right{
       display:flex;
       flex-direction:column;
-      align-items:center; /* align with other elements in the block */
-      gap:8px;           /* tighter */
+      align-items:center;
+      gap:8px;
       padding-top:4px;
     }
 
-    /* Photo: 200px × 240px and aligned */
     .avatar{
       width:200px;
       height:240px;
@@ -115,7 +115,6 @@
       display:block;
     }
 
-    /* Name brighter + bigger */
     .right-name{
       margin:0;
       font-size:20px;
@@ -126,7 +125,6 @@
       text-shadow: 0 8px 22px rgba(0,0,0,.35);
     }
 
-    /* Status moved down: align with menu height visually */
     .status{
       display:inline-flex;
       justify-content:center;
@@ -138,7 +136,7 @@
       background:rgba(110,231,255,.10);
       font-size:13px;
       width:100%;
-      margin-top:18px; /* pushes it toward menu level */
+      margin-top:18px;
     }
     .dot{
       width:9px; height:9px;
@@ -148,12 +146,12 @@
     }
 
     .nav{
-      padding:0 22px 14px; /* a bit less bottom padding */
+      padding:0 22px 14px;
       display:flex;
       gap:10px;
       flex-wrap:wrap;
       align-items:center;
-      margin-top:-6px; /* pulls menu slightly upward to reduce whitespace */
+      margin-top:-6px;
     }
     .pill{
       padding:9px 12px;
@@ -366,13 +364,8 @@
             <p>
               Google Ads, Meta, Amazon, analytics, and automation — one accountable owner.
             </p>
-            <p>
-            </p>
-            <p>
-            </p>
           </div>
 
-          <!-- moved 2 paragraphs down (now AFTER lead) -->
           <div class="highlight">
             Former Google Ads consultant. Relying on data – no guessing.
           </div>
@@ -627,7 +620,7 @@
 
           <div class="row">
             <div>
-              <strong>PPC campaigns setup</strong>
+              <strong>Campaign setup</strong>
               <div class="hint">Cost strongly depends on your business and scope.</div>
             </div>
             <div class="val">from $800</div>
@@ -635,7 +628,7 @@
 
           <div class="row">
             <div>
-              <strong>PPC campaigns management</strong>
+              <strong>Campaign management</strong>
               <div class="hint">Cost strongly depends on your business and scope.</div>
             </div>
             <div class="val">from $500/month</div>
@@ -715,3 +708,4 @@
   </script>
 </body>
 </html>
+
