@@ -35,7 +35,6 @@
       color:var(--text);
       line-height:1.55;
 
-      /* Brighter spots in top-middle + center + bottom-middle */
       background:
         radial-gradient(900px 520px at 50% 12%, rgba(110,231,255,.20), transparent 62%),
         radial-gradient(1000px 560px at 50% 52%, rgba(96,165,250,.12), transparent 65%),
@@ -70,7 +69,7 @@
     }
     .hero > *{position:relative; z-index:1}
 
-    /* HEADER LAYOUT (updated per request) */
+    /* HEADER LAYOUT */
     .hero-inner{
       padding:22px 22px 16px;
       display:grid;
@@ -87,13 +86,6 @@
       line-height:1.05;
     }
 
-    .name{
-      margin:14px 0 0;
-      font-size:26px;
-      letter-spacing:-.4px;
-      color:rgba(242,245,255,.92);
-    }
-
     .lead{
       margin:14px 0 0;
       color:var(--muted);
@@ -103,28 +95,37 @@
 
     .highlight{
       margin:14px 0 0;
-      font-size:16.5px; /* bigger as requested */
+      font-size:16.5px;
       color:rgba(242,245,255,.92);
       font-weight:700;
     }
 
-    /* Right side: photo + status */
+    /* Right side: photo + name + status */
     .hero-right{
       display:flex;
       flex-direction:column;
       align-items:stretch;
-      gap:12px;
+      gap:10px;
       padding-top:4px;
     }
 
-    /* Photo 60% of header height: use clamp to behave responsively */
+    /* Photo: smaller + NOT CUT (contain) */
     .avatar{
       width:100%;
-      height:clamp(210px, 60vh, 260px);
-      object-fit:cover;
+      height:240px;          /* a bit smaller */
+      object-fit:contain;    /* full image visible (no crop) */
       border-radius:22px;
       border:1px solid rgba(255,255,255,.18);
       box-shadow:0 18px 46px rgba(0,0,0,.38);
+      background:rgba(0,0,0,.12);
+    }
+
+    .right-name{
+      margin:0;
+      font-size:16px;
+      font-weight:800;
+      color:rgba(242,245,255,.92);
+      text-align:center;
     }
 
     .status{
@@ -200,11 +201,11 @@
     .span-6{grid-column: span 6}
     .span-4{grid-column: span 4}
     @media (max-width: 980px){
-      .hero-inner{grid-template-columns:1fr; }
+      .hero-inner{grid-template-columns:1fr;}
       .hero-right{order:2}
       .span-6,.span-4{grid-column: span 12}
-      .avatar{height:240px}
       .big-role{font-size:36px}
+      .avatar{height:220px}
     }
 
     /* Service cards */
@@ -239,7 +240,6 @@
     ul{margin:10px 0 0; padding-left:18px}
     li{margin:6px 0}
 
-    /* Focus card */
     .focus-card{
       border-color: rgba(110,231,255,.30);
       background:
@@ -247,7 +247,6 @@
         rgba(0,0,0,.14);
     }
 
-    /* Details accordions */
     details.acc{
       border:1px solid rgba(255,255,255,.12);
       background:rgba(0,0,0,.14);
@@ -278,7 +277,6 @@
       padding:12px;
     }
 
-    /* Full-size images in examples (no cropping) */
     .example-img{
       width:100%;
       height:auto;
@@ -291,7 +289,6 @@
       background:rgba(0,0,0,.10);
     }
 
-    /* Pricing rows */
     .row{
       display:flex;
       justify-content:space-between;
@@ -302,12 +299,12 @@
     .row:first-child{border-top:0; padding-top:2px}
     .val{white-space:nowrap; font-weight:900}
 
-    /* Contact buttons */
+    /* Contact buttons: LinkedIn style */
     .cta{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      margin-top:10px;
+      margin-top:12px;
       align-items:center;
     }
     .btn{
@@ -321,20 +318,17 @@
       font-size:13px;
       transition:transform .15s ease, background .15s ease, border-color .15s ease;
       cursor:pointer;
+      user-select:none;
     }
     .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.20)}
     .btn.primary{
       border-color: rgba(110,231,255,.30);
       background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(96,165,250,.10));
     }
-
-    code{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size:12px;
-      padding:.15em .35em;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:8px;
+    /* Make all contact buttons look like LinkedIn button */
+    .btn.contact{ /* same style as primary */
+      border-color: rgba(110,231,255,.30);
+      background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(96,165,250,.10));
     }
 
     footer{
@@ -349,12 +343,11 @@
 <body>
   <div class="container">
 
-    <!-- TOP HERO (updated only as requested) -->
+    <!-- TOP HERO (only header changed as requested) -->
     <section class="hero" id="top">
       <div class="hero-inner">
         <div>
           <h1 class="big-role">Digital Marketing Expert</h1>
-          <div class="name">Dmytro Ivanenko</div>
 
           <div class="lead">
             <p>Most companies run ads, but very few run a system that turns traffic into revenue.</p>
@@ -376,6 +369,7 @@
 
         <div class="hero-right">
           <img class="avatar" src="dmytro.jpg" alt="Dmytro Ivanenko photo" />
+          <p class="right-name">Dmytro Ivanenko</p>
           <div class="status"><span class="dot" aria-hidden="true"></span> Open for new projects ✅</div>
         </div>
       </div>
@@ -389,7 +383,7 @@
       </nav>
     </section>
 
-    <!-- PAY PER CLICK SERVICES (kept as in previous code) -->
+    <!-- PAY PER CLICK SERVICES (unchanged) -->
     <section class="section" id="ppc" aria-label="Pay Per Click services">
       <div class="head">
         <h2 class="h2">Pay Per Click services</h2>
@@ -481,7 +475,7 @@
       </div>
     </section>
 
-    <!-- TECHNICAL SERVICES (kept as in previous code) -->
+    <!-- TECHNICAL SERVICES (unchanged) -->
     <section class="section" id="technical" aria-label="Technical services">
       <div class="head">
         <h2 class="h2">Technical services</h2>
@@ -525,7 +519,7 @@
       </div>
     </section>
 
-    <!-- EXAMPLES (kept as in previous code, only image path already updated) -->
+    <!-- EXAMPLES (unchanged) -->
     <section class="section" id="work" aria-label="Examples of work">
       <div class="head">
         <h2 class="h2">Examples of my work</h2>
@@ -583,7 +577,7 @@
       </div>
     </section>
 
-    <!-- PRICES (kept as in previous code) -->
+    <!-- PRICES (unchanged) -->
     <section class="section" id="pricing" aria-label="Prices">
       <div class="head">
         <h2 class="h2">Prices</h2>
@@ -640,17 +634,8 @@
 
       <p style="margin:0; color:var(--muted);">Book a free 15 min call with Dmytro</p>
 
-      <div class="cta" style="margin-top:12px;">
-        <a class="btn primary" href="https://www.linkedin.com/in/dmytro-ivanenko-09ba95197/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="btn" href="https://www.upwork.com/freelancers/~01d94beb9ccb6babe7" target="_blank" rel="noreferrer">Upwork</a>
-
-        <!-- Email button that reveals the email on click -->
-        <button class="btn" id="emailBtn" type="button">Email</button>
-
-        <span id="emailReveal" style="display:none; color:rgba(242,245,255,.92); font-weight:700;">
-          dmytro.ivanenko3@gmail.com
-        </span>
-
+      <div class="cta">
+        <!-- Calendar button FIRST; label updated -->
         <!-- Google Calendar Appointment Scheduling begin -->
         <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
         <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
@@ -661,13 +646,22 @@
             calendar.schedulingButton.load({
               url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3TNTUr-qLMO1UFzj-Kb0Ly2aywMk8n_yY-s9xp1N7YjJ6Fq9nVFB82Mg2uGC09jAD_x3tb5b_B?gv=true',
               color: '#33B679',
-              label: "Book a call",
+              label: "Book a 15 min call with Dmytro",
               target,
             });
           });
         })();
         </script>
         <!-- end Google Calendar Appointment Scheduling -->
+
+        <!-- Next 3 buttons (same style as LinkedIn button) -->
+        <a class="btn contact" href="https://www.linkedin.com/in/dmytro-ivanenko-09ba95197/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn contact" href="https://www.upwork.com/freelancers/~01d94beb9ccb6babe7" target="_blank" rel="noreferrer">Upwork</a>
+        <button class="btn contact" id="emailBtn" type="button">Email</button>
+
+        <span id="emailReveal" style="display:none; color:rgba(242,245,255,.92); font-weight:800;">
+          dmytro.ivanenko3@gmail.com
+        </span>
       </div>
     </section>
 
@@ -694,6 +688,7 @@
   </script>
 </body>
 </html>
+
 
 
 
