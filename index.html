@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dmytro Ivanenko — Digital Marketing Expert</title>
-  <meta name="description" content="Dmytro Ivanenko — Digital Marketing Expert. Google Ads-focused PPC, tracking, automations, and outbound systems." />
+  <meta name="description" content="Dmytro Ivanenko — Digital Marketing Expert. Google Ads-focused PPC, tracking, automations." />
 
   <style>
     :root{
-      /* Monolithic blue base (same top & bottom) */
+      /* Monolithic blue base */
       --bg:#0e1630;
 
       /* UI */
@@ -35,11 +35,7 @@
       color:var(--text);
       line-height:1.55;
 
-      /*
-        One continuous background:
-        - brighter spots in the MIDDLE of the page TOP and BOTTOM
-        - bottom uses the same base color (no green/violet shift)
-      */
+      /* Brighter spots in top-middle + center + bottom-middle */
       background:
         radial-gradient(900px 520px at 50% 12%, rgba(110,231,255,.20), transparent 62%),
         radial-gradient(1000px 560px at 50% 52%, rgba(96,165,250,.12), transparent 65%),
@@ -108,14 +104,15 @@
       border-radius:22px;
       border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.04);
-      max-width:420px;
+      max-width:460px;
     }
+    /* Bigger profile photo */
     .avatar{
-      width:74px; height:74px;
-      border-radius:18px;
+      width:110px; height:110px;
+      border-radius:22px;
       border:1px solid rgba(255,255,255,.18);
       object-fit:cover;
-      box-shadow:0 14px 36px rgba(0,0,0,.35);
+      box-shadow:0 18px 46px rgba(0,0,0,.38);
       flex:0 0 auto;
     }
     .mini strong{display:block; font-size:14px}
@@ -235,13 +232,6 @@
         radial-gradient(620px 220px at 50% 10%, rgba(110,231,255,.12), transparent 62%),
         rgba(0,0,0,.14);
     }
-    .img{
-      width:100%;
-      max-height:240px;
-      object-fit:cover;
-      display:block;
-      border-top:1px solid rgba(255,255,255,.10);
-    }
 
     /* Details accordions */
     details.acc{
@@ -273,14 +263,18 @@
       border-radius:18px;
       padding:12px;
     }
-    .mini-card img{
+
+    /* Full-size images in examples (no cropping) */
+    .example-img{
       width:100%;
-      max-height:260px;
-      object-fit:cover;
+      height:auto;           /* keep full */
+      max-height:none;       /* no forced crop */
+      object-fit:contain;    /* ensure full image is visible */
       border-radius:14px;
       border:1px solid rgba(255,255,255,.10);
       display:block;
       margin-top:10px;
+      background:rgba(0,0,0,.10);
     }
 
     /* Pricing rows */
@@ -347,7 +341,7 @@
           <p class="role">Digital Marketing Expert</p>
           <p class="lead">
             I build paid growth systems end-to-end: Google Ads-first PPC, conversion tracking (GA4 + Enhanced Conversions),
-            consent mode, server-side tracking, automations, and outbound—so results are measurable and scalable.
+            consent mode, server-side tracking, and automations—so results are measurable and scalable.
           </p>
           <div class="status"><span class="dot" aria-hidden="true"></span> Open for new projects ✅</div>
         </div>
@@ -363,22 +357,23 @@
       </div>
 
       <nav class="nav" aria-label="Page navigation">
-        <a class="pill" href="#services">Services</a>
+        <a class="pill" href="#ppc">Pay Per Click services</a>
+        <a class="pill" href="#technical">Technical services</a>
         <a class="pill" href="#work">Examples</a>
-        <a class="pill" href="#pricing">Pricing</a>
+        <a class="pill" href="#pricing">Prices</a>
         <a class="pill primary" href="#contact">Contact</a>
       </nav>
     </section>
 
-    <!-- SERVICES -->
-    <section class="section" id="services" aria-label="Services">
+    <!-- 1) PAY PER CLICK SERVICES -->
+    <section class="section" id="ppc" aria-label="Pay Per Click services">
       <div class="head">
-        <h2 class="h2">Services</h2>
+        <h2 class="h2">Pay Per Click services</h2>
         <p class="hint">Google Ads is the main focus</p>
       </div>
 
       <div class="grid">
-        <!-- FOCUS: Google Ads -->
+        <!-- Focus: Google Ads (NO IMAGE HERE as requested) -->
         <div class="span-6">
           <div class="card focus-card">
             <div class="pad">
@@ -393,7 +388,6 @@
                 <li>Measurement-first approach (clean conversion data)</li>
               </ul>
             </div>
-            <img class="img" src="Google ads.png" alt="Google Ads PPC example" />
           </div>
         </div>
 
@@ -449,46 +443,70 @@
           </div>
         </div>
 
-        <!-- Automations -->
+        <!-- Amazon -->
         <div class="span-4">
           <div class="card">
             <div class="pad">
               <div class="kicker">
-                <h3 class="title2">Automations</h3>
-                <span class="badge">Systems</span>
+                <h3 class="title2">Amazon Ads</h3>
+                <span class="badge">Marketplace</span>
               </div>
-              <p class="desc">Data sync, reporting, and CRM workflows that reduce manual work.</p>
+              <p class="desc">Sponsored Products / Brands / Display with measurable performance.</p>
               <ul>
-                <li>Workflow automation</li>
-                <li>Reporting automation</li>
-                <li>CRM logic + escalation</li>
+                <li>Structure, targeting, negatives</li>
+                <li>Budget control + scaling</li>
               </ul>
             </div>
           </div>
         </div>
-
-        <!-- Cold Emailing -->
-        <div class="span-12">
-          <div class="card">
-            <div class="pad">
-              <div class="kicker">
-                <h3 class="title2">Cold Emailing</h3>
-                <span class="badge">Outbound</span>
-              </div>
-              <p class="desc">Outbound sequences: message → sequence → tracking → follow-up.</p>
-              <ul>
-                <li>ICP + offer packaging</li>
-                <li>Sequence design (1–5 steps) + follow-ups</li>
-                <li>Routing replies to CRM and notifying the right owner</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
 
-    <!-- EXAMPLES -->
+    <!-- 2) TECHNICAL SERVICES (Automation replaces Cold Emailing; Cold Emailing removed) -->
+    <section class="section" id="technical" aria-label="Technical services">
+      <div class="head">
+        <h2 class="h2">Technical services</h2>
+        <p class="hint">Tracking + data accuracy + automation</p>
+      </div>
+
+      <div class="grid">
+        <div class="span-6">
+          <div class="card">
+            <div class="pad">
+              <div class="kicker">
+                <h3 class="title2">Conversion tracking</h3>
+                <span class="badge">GA4 • Enhanced</span>
+              </div>
+              <p class="desc">End-to-end measurement so you can trust performance numbers.</p>
+              <ul>
+                <li>GA4 events + e-commerce funnels</li>
+                <li>Enhanced Conversions + Offline conversions</li>
+                <li>Consent Mode and validation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="span-6">
+          <div class="card">
+            <div class="pad">
+              <div class="kicker">
+                <h3 class="title2">Automation</h3>
+                <span class="badge">CRM • Workflows</span>
+              </div>
+              <p class="desc">Data sync, reporting, and CRM workflows that reduce manual work.</p>
+              <ul>
+                <li>Workflow automation and escalation logic</li>
+                <li>Reporting automation</li>
+                <li>CRM routing + notifications</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) EXAMPLES -->
     <section class="section" id="work" aria-label="Examples of work">
       <div class="head">
         <h2 class="h2">Examples of my work</h2>
@@ -506,7 +524,8 @@
               <p>Account audits, structure improvements, bidding strategy work, and continuous optimization.</p>
               <div class="mini-card">
                 <strong>Example image</strong>
-                <img src="Google ads.png" alt="Google Ads results example" />
+                <!-- Full-size (no crop) -->
+                <img class="example-img" src="Google ads.png" alt="Google Ads results example" />
               </div>
             </div>
           </details>
@@ -522,7 +541,8 @@
               <p>Automations for follow-ups, pipeline hygiene, and notifications when leads stall.</p>
               <div class="mini-card">
                 <strong>Example image</strong>
-                <img src="Screenshot 2026-01-06 213745.png" alt="Automation workflow example" />
+                <!-- Full-size (no crop) -->
+                <img class="example-img" src="Screenshot 2026-01-06 213745.png" alt="Automation workflow example" />
               </div>
             </div>
           </details>
@@ -532,45 +552,25 @@
           <details class="acc">
             <summary class="acc-sum">
               Conversion Tracking
-              <span class="hint">GA4 • Enhanced</span>
+              <span class="hint">GA4 • E-commerce</span>
             </summary>
             <div class="body">
-              <p>GA4 event setup, enhanced conversions, offline conversions, consent mode, and validation.</p>
+              <p>GA4 e-commerce funnel tracking, enhanced conversions, offline conversions, consent mode, and validation.</p>
               <div class="mini-card">
-                <strong>What I typically deliver</strong>
-                <ul>
-                  <li>Clear event taxonomy and QA</li>
-                  <li>Conversion consistency across platforms</li>
-                  <li>Consent-aware measurement</li>
-                </ul>
+                <strong>Example image</strong>
+                <!-- Requested image path -->
+                <img class="example-img" src="GA4 e-commerce.png" alt="GA4 e-commerce conversion tracking example" />
               </div>
-            </div>
-          </details>
-        </div>
-
-        <div class="span-12">
-          <details class="acc">
-            <summary class="acc-sum">
-              Cold Emailing
-              <span class="hint">Outbound system</span>
-            </summary>
-            <div class="body">
-              <p>ICP messaging and sequences built to generate replies and route them correctly.</p>
-              <ul>
-                <li>Short sequences + clear CTA</li>
-                <li>Follow-up logic</li>
-                <li>CRM routing + notifications</li>
-              </ul>
             </div>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- PRICING -->
-    <section class="section" id="pricing" aria-label="Pricing">
+    <!-- 4) PRICES -->
+    <section class="section" id="pricing" aria-label="Prices">
       <div class="head">
-        <h2 class="h2">Pricing</h2>
+        <h2 class="h2">Prices</h2>
         <p class="hint">Click to expand</p>
       </div>
 
@@ -615,7 +615,7 @@
       </details>
     </section>
 
-    <!-- CONTACT -->
+    <!-- 5) CONTACT -->
     <section class="section" id="contact" aria-label="Contact">
       <div class="head">
         <h2 class="h2">Contact</h2>
@@ -645,3 +645,4 @@
   </script>
 </body>
 </html>
+
