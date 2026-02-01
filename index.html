@@ -76,18 +76,18 @@
       line-height:1.05;
     }
 
-    /* ✅ bigger distance: title -> text */
+    /* bigger distance: title -> text */
     .lead{
-      margin:26px 0 0; /* was 12px */
+      margin:26px 0 0;
       color:var(--muted);
       max-width:78ch;
       font-size:15px;
     }
-    .lead p{margin:0 0 12px;} /* slightly more breathing room */
+    .lead p{margin:0 0 12px;}
 
-    /* ✅ bigger distance: text -> highlight */
+    /* bigger distance: text -> highlight */
     .highlight{
-      margin:30px 0 0; /* was 18px */
+      margin:30px 0 0;
       font-size:18px;
       color:rgba(242,245,255,.96);
       font-weight:800;
@@ -167,7 +167,7 @@
       background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(96,165,250,.10));
     }
 
-    /* Sections (unchanged) */
+    /* Sections */
     .section{
       margin-top:22px;
       padding:20px;
@@ -298,7 +298,7 @@
     .row:first-child{border-top:0; padding-top:2px}
     .val{white-space:nowrap; font-weight:900}
 
-    /* Contact UX: separate booking from other actions */
+    /* Contact UX */
     .contact-wrap{
       display:flex;
       flex-direction:column;
@@ -326,10 +326,6 @@
       user-select:none;
     }
     .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.20)}
-    .btn.primary{
-      border-color: rgba(110,231,255,.30);
-      background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(96,165,250,.10));
-    }
     .btn.contact{
       border-color: rgba(110,231,255,.30);
       background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(96,165,250,.10));
@@ -367,7 +363,7 @@
           </div>
 
           <div class="highlight">
-            Former Google Ads consultant. Relying on data – no guessing.
+            Former Google Ads consultant. Relying on data — no guessing.
           </div>
         </div>
 
@@ -379,7 +375,7 @@
       </div>
 
       <nav class="nav" aria-label="Page navigation">
-        <a class="pill" href="#ppc">Pay Per Click marketing services</a>
+        <a class="pill" href="#ppc">Paid marketing services</a>
         <a class="pill" href="#technical">Technical services</a>
         <a class="pill" href="#work">Examples of work</a>
         <a class="pill" href="#pricing">Prices</a>
@@ -387,7 +383,7 @@
       </nav>
     </section>
 
-    <!-- PAY PER CLICK SERVICES (unchanged) -->
+    <!-- PAY PER CLICK SERVICES -->
     <section class="section" id="ppc" aria-label="Pay Per Click services">
       <div class="head">
         <h2 class="h2">Pay Per Click marketing services</h2>
@@ -407,7 +403,7 @@
                 <li>Strategy & account structure</li>
                 <li>Campaign setup + continuous optimization for revenue</li>
                 <li>Bidding strategy management + budget allocation control</li>
-                <li>Keyword research, search terms analysis, and negative keyword</li>
+                <li>Keyword research, search term analysis, and negative keywords</li>
                 <li>Performance monitoring + iterative improvements based on data</li>
                 <li>Reporting to stakeholders with clear next actions</li>
               </ul>
@@ -425,7 +421,7 @@
               <p class="desc">Prospecting + remarketing with tracking you can trust.</p>
               <ul>
                 <li>Full-funnel strategy (prospecting + retargeting)</li>
-                <li>Campaign setup with clean testing structure</li>
+                <li>Campaign setup with a clean testing structure</li>
                 <li>Budget & bidding optimization to improve CPA/ROAS</li>
                 <li>Creative and audience testing (A/B approach)</li>
                 <li>Performance monitoring + fast iteration based on results</li>
@@ -447,7 +443,7 @@
                 <li>Strategy + campaign setup</li>
                 <li>Bidding strategy and budget optimization</li>
                 <li>Keyword research and query control</li>
-                <li>Performance monitoring + optimization</li>
+                <li>Performance monitoring + ongoing optimization</li>
                 <li>Expansion opportunities and efficiency improvements</li>
                 <li>Reporting and actionable insights</li>
               </ul>
@@ -495,7 +491,7 @@
       </div>
     </section>
 
-    <!-- TECHNICAL SERVICES (unchanged) -->
+    <!-- TECHNICAL SERVICES -->
     <section class="section" id="technical" aria-label="Technical services">
       <div class="head">
         <h2 class="h2">Technical services</h2>
@@ -512,9 +508,9 @@
               </div>
               <p class="desc">End-to-end measurement so you can trust performance numbers.</p>
               <ul>
-                <li>Conversion tracking setup/optimization</li>
-                <li>Enhanced conversions + Offline conversions</li>
-                <li>Consent Mode and Server Site Tracking</li>
+                <li>Conversion tracking setup and optimization</li>
+                <li>Enhanced conversions + offline conversions</li>
+                <li>Consent Mode and server-side tracking</li>
               </ul>
             </div>
           </div>
@@ -529,9 +525,9 @@
               </div>
               <p class="desc">Data sync, reporting, and CRM workflows that reduce manual work.</p>
               <ul>
-                <li>Workflow and Dataflow automations</li>
+                <li>Workflow and dataflow automations</li>
                 <li>Automated reporting</li>
-                <li>CRM routing, Notifications and more</li>
+                <li>CRM routing, notifications, and more</li>
               </ul>
             </div>
           </div>
@@ -539,7 +535,7 @@
       </div>
     </section>
 
-    <!-- EXAMPLES (unchanged) -->
+    <!-- EXAMPLES -->
     <section class="section" id="work" aria-label="Examples of work">
       <div class="head">
         <h2 class="h2">Examples of my work</h2>
@@ -554,7 +550,12 @@
               <span class="hint">Optimization • Scaling</span>
             </summary>
             <div class="body">
-              <p>Account audits, structure improvements, bidding strategy work, and continuous optimization.</p>
+              <p>
+                The client wanted to expand and increase conversions and requested a one-time account optimization.
+                After analyzing the situation, I made changes tailored to the client’s needs. The screenshot illustrates
+                growth in clicks and conversions following the adjustments. The client achieved a 240% revenue increase
+                with only a 15% rise in costs.
+              </p>
               <div class="mini-card">
                 <strong>Example image</strong>
                 <img class="example-img" src="Google ads.png" alt="Google Ads results example" />
@@ -567,10 +568,13 @@
           <details class="acc">
             <summary class="acc-sum">
               Automation
-              <span class="hint">CRM • Workflows</span>
+              <span class="hint">Crawling • Workflows</span>
             </summary>
             <div class="body">
-              <p>Automations for follow-ups, pipeline hygiene, and notifications when leads stall.</p>
+              <p>
+                This automation retrieves social media profile links from competitors’ websites and gathers new content
+                they publish.
+              </p>
               <div class="mini-card">
                 <strong>Example image</strong>
                 <img class="example-img" src="Screenshot 2026-01-06 213745.png" alt="Automation workflow example" />
@@ -586,7 +590,10 @@
               <span class="hint">GA4 • E-commerce</span>
             </summary>
             <div class="body">
-              <p>GA4 e-commerce funnel tracking, enhanced conversions, offline conversions, consent mode, and validation.</p>
+              <p>
+                The screenshot shows GA4 e-commerce funnel tracking. With this data, it’s easy to understand where we can
+                improve the website’s UX to increase purchases.
+              </p>
               <div class="mini-card">
                 <strong>Example image</strong>
                 <img class="example-img" src="GA4-Ecomm.png" alt="GA4 e-commerce conversion tracking example" />
@@ -594,10 +601,26 @@
             </div>
           </details>
         </div>
+
+        <!-- ✅ NEW: Reporting example -->
+        <div class="span-12">
+          <details class="acc">
+            <summary class="acc-sum">
+              Reporting
+              <span class="hint">Reporting • Data-driven</span>
+            </summary>
+            <div class="body">
+              <p>
+                This is one part of a larger real-time report that compares a company’s organic results with its competitors.
+                It helps us evaluate the effectiveness of the company’s SEO efforts and is especially useful in B2B.
+              </p>
+            </div>
+          </details>
+        </div>
       </div>
     </section>
 
-    <!-- PRICES (unchanged) -->
+    <!-- PRICES -->
     <section class="section" id="pricing" aria-label="Prices">
       <div class="head">
         <h2 class="h2">Prices</h2>
@@ -708,4 +731,3 @@
   </script>
 </body>
 </html>
-
