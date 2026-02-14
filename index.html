@@ -698,6 +698,31 @@
           <!-- end Google Calendar Appointment Scheduling -->
         </div>
 
+<script>
+(function () {
+  function pushDL(el) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'google_meeting_click',
+      button_text: (el.innerText || el.textContent || '').replace(/\s+/g, ' ').trim()
+    });
+  }
+
+  // Works even if Google changes DOM / overlays
+  document.addEventListener('click', function (e) {
+    var el = e.target;
+
+    while (el && el !== document) {
+      if (el.className && typeof el.className === 'string' && (' ' + el.className + ' ').indexOf(' qxCtlb ') > -1) {
+        pushDL(el);
+        break;
+      }
+      el = el.parentNode;
+    }
+  }, true); // capture helps if something stops bubbling
+})();
+</script>
+
         <div class="cta">
           <a class="btn contact" href="https://www.linkedin.com/in/dmytro-ivanenko-09ba95197/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a class="btn contact" href="https://www.upwork.com/freelancers/~01d94beb9ccb6babe7" target="_blank" rel="noreferrer">Upwork</a>
