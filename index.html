@@ -228,7 +228,6 @@
     }
     .title2{margin:0; font-size:15px; font-weight:850}
 
-    /* ✅ shorter descriptions (but same “brightness” / same card background) */
     .desc{
       margin:8px 0 0;
       color:var(--muted);
@@ -237,7 +236,6 @@
       max-width:110ch;
     }
 
-    /* ✅ 4 points in 2 columns inside the same block */
     .two-col{
       margin:10px 0 0;
       padding-left:18px;
@@ -407,7 +405,6 @@
       </div>
 
       <div class="grid">
-        <!-- ✅ full-width description block -->
         <div class="span-12">
           <div class="card focus-card">
             <div class="pad">
@@ -422,7 +419,6 @@
                 Continuous optimization based on performance data and measurable outcomes.
               </p>
 
-              <!-- ✅ 4 points, 2 left + 2 right -->
               <ul class="two-col">
                 <li>Strategy and account structure (built for scale)</li>
                 <li>Campaign setup + continuous optimization for revenue</li>
@@ -433,7 +429,6 @@
           </div>
         </div>
 
-        <!-- ✅ example UNDER the description block -->
         <div class="span-12">
           <details class="acc">
             <summary class="acc-sum">
@@ -464,7 +459,6 @@
       </div>
 
       <div class="grid">
-        <!-- ✅ full-width description block -->
         <div class="span-12">
           <div class="card">
             <div class="pad">
@@ -479,7 +473,6 @@
                 Fix missing or duplicated conversions and connect marketing data with what happens later in CRM or sales.
               </p>
 
-              <!-- ✅ 4 points, 2 left + 2 right -->
               <ul class="two-col">
                 <li>Tracking setup and optimization for better campaign performance</li>
                 <li>Enhanced conversions (stronger attribution when browsers limit tracking)</li>
@@ -490,7 +483,6 @@
           </div>
         </div>
 
-        <!-- ✅ example UNDER the description block -->
         <div class="span-12">
           <details class="acc">
             <summary class="acc-sum">
@@ -519,7 +511,6 @@
       </div>
 
       <div class="grid">
-        <!-- ✅ full-width description block -->
         <div class="span-12">
           <div class="card">
             <div class="pad">
@@ -534,7 +525,6 @@
                 Common use cases: lead routing, follow-ups, pipeline hygiene, and automated reporting updates.
               </p>
 
-              <!-- ✅ 4 points, 2 left + 2 right -->
               <ul class="two-col">
                 <li>Data integration and synchronization</li>
                 <li>CRM workflows, routing, and notifications</li>
@@ -545,7 +535,6 @@
           </div>
         </div>
 
-        <!-- ✅ example UNDER the description block -->
         <div class="span-12">
           <details class="acc">
             <summary class="acc-sum">
@@ -574,7 +563,6 @@
       </div>
 
       <div class="grid">
-        <!-- ✅ full-width description block -->
         <div class="span-12">
           <div class="card">
             <div class="pad">
@@ -589,7 +577,6 @@
                 For B2B teams, reporting acts as a control system: visibility across channels and fewer decisions based on assumptions.
               </p>
 
-              <!-- ✅ 4 points, 2 left + 2 right -->
               <ul class="two-col">
                 <li>Dashboards that combine ads + analytics (and CRM where needed)</li>
                 <li>Focus on outcomes: leads, pipeline, revenue, and efficiency</li>
@@ -600,7 +587,6 @@
           </div>
         </div>
 
-        <!-- ✅ example UNDER the description block -->
         <div class="span-12">
           <details class="acc">
             <summary class="acc-sum">
@@ -670,7 +656,7 @@
       </details>
     </section>
 
-    <!-- CONTACT (unchanged) -->
+    <!-- CONTACT (changed only in scheduler button area) -->
     <section class="section" id="contact" aria-label="Contact">
       <div class="head">
         <h2 class="h2">Contact</h2>
@@ -679,49 +665,16 @@
 
       <div class="contact-wrap">
         <div>
-          <!-- Google Calendar Appointment Scheduling begin -->
+          <!-- Google Calendar Appointment Scheduling assets (kept) -->
           <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
           <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-          <script>
-          (function() {
-            var target = document.currentScript;
-            window.addEventListener('load', function() {
-              calendar.schedulingButton.load({
-                url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3TNTUr-qLMO1UFzj-Kb0Ly2aywMk8n_yY-s9xp1N7YjJ6Fq9nVFB82Mg2uGC09jAD_x3tb5b_B?gv=true',
-                color: '#33B679',
-                label: "Book a 15 min call with Dmytro",
-                target,
-              });
-            });
-          })();
-          </script>
-          <!-- end Google Calendar Appointment Scheduling -->
+
+          <!-- Reveal button (works like Email) -->
+          <button class="btn contact" id="meetBtn" type="button">Book a 15-minute call with Dmitry</button>
+
+          <!-- Scheduler button will be injected here only after click -->
+          <span id="meetReveal" style="display:none;"></span>
         </div>
-
-<script>
-(function () {
-  function pushDL(el) {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'google_meeting_click',
-      button_text: (el.innerText || el.textContent || '').replace(/\s+/g, ' ').trim()
-    });
-  }
-
-  // Works even if Google changes DOM / overlays
-  document.addEventListener('click', function (e) {
-    var el = e.target;
-
-    while (el && el !== document) {
-      if (el.className && typeof el.className === 'string' && (' ' + el.className + ' ').indexOf(' qxCtlb ') > -1) {
-        pushDL(el);
-        break;
-      }
-      el = el.parentNode;
-    }
-  }, true); // capture helps if something stops bubbling
-})();
-</script>
 
         <div class="cta">
           <a class="btn contact" href="https://www.linkedin.com/in/dmytro-ivanenko-09ba95197/" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -753,6 +706,52 @@
         var shown = reveal.style.display !== "none";
         reveal.style.display = shown ? "none" : "inline";
         btn.textContent = shown ? "Email" : "Hide email";
+      });
+    })();
+
+    // Reveal Google Meet Appointment on click (inject scheduler button only when shown)
+    (function(){
+      var btn = document.getElementById("meetBtn");
+      var reveal = document.getElementById("meetReveal");
+      var loaded = false;
+      if(!btn || !reveal) return;
+
+      btn.addEventListener("click", function(){
+        var shown = reveal.style.display !== "none";
+
+        if (shown) {
+          // hide
+          reveal.style.display = "none";
+          btn.textContent = "Book a 15-minute call with Dmitry";
+          return;
+        }
+
+        // show
+        reveal.style.display = "inline-block";
+        btn.textContent = "Hide appointment";
+
+        // load scheduler button only once
+        if (!loaded) {
+          loaded = true;
+
+          // wait until Google script is available (async load)
+          var tries = 0;
+          (function waitForCalendar(){
+            tries++;
+            if (window.calendar && calendar.schedulingButton && calendar.schedulingButton.load) {
+              calendar.schedulingButton.load({
+                url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3TNTUr-qLMO1UFzj-Kb0Ly2aywMk8n_yY-s9xp1N7YjJ6Fq9nVFB82Mg2uGC09jAD_x3tb5b_B?gv=true',
+                color: '#33B679',
+                label: 'Google Meet Appointment',
+                target: reveal
+              });
+              return;
+            }
+            if (tries < 60) {
+              setTimeout(waitForCalendar, 100);
+            }
+          })();
+        }
       });
     })();
   </script>
