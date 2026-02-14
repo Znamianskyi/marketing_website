@@ -1,18 +1,18 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-T7LSD46F');</script>
-<!-- End Google Tag Manager -->
-  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T7LSD46F');</script>
+  <!-- End Google Tag Manager -->
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dmytro Ivanenko — Digital Marketing Expert</title>
-  <meta name="description" content="Dmytro Ivanenko — Digital Marketing Expert. Google Ads-focused PPC, tracking, automations." />
+  <meta name="description" content="Dmytro Ivanenko — Digital Marketing Expert. Paid media, tracking, automation, reporting." />
 
   <style>
     :root{
@@ -68,7 +68,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .hero > *{position:relative; z-index:1}
 
-    /* HEADER LAYOUT */
     .hero-inner{
       padding:22px 22px 10px;
       display:grid;
@@ -101,7 +100,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       text-shadow: 0 10px 24px rgba(0,0,0,.35);
     }
 
-    /* Right side: photo + name + status */
     .hero-right{
       display:flex;
       flex-direction:column;
@@ -206,6 +204,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .span-12{grid-column: span 12}
     .span-6{grid-column: span 6}
     .span-4{grid-column: span 4}
+
     @media (max-width: 980px){
       .hero-inner{grid-template-columns:1fr;}
       .hero-right{order:2}
@@ -228,22 +227,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       gap:10px;
     }
     .title2{margin:0; font-size:15px; font-weight:850}
-    .badge{
-      font-size:12px;
-      color:var(--text);
-      border:1px solid rgba(110,231,255,.28);
-      background:rgba(110,231,255,.10);
-      padding:6px 10px;
-      border-radius:999px;
-      white-space:nowrap;
+
+    /* ✅ shorter descriptions (but same “brightness” / same card background) */
+    .desc{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.45;
+      max-width:110ch;
     }
-    .badge.focus{
-      border-color: rgba(110,231,255,.42);
-      background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(96,165,250,.12));
+
+    /* ✅ 4 points in 2 columns inside the same block */
+    .two-col{
+      margin:10px 0 0;
+      padding-left:18px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:6px 28px;
     }
-    .desc{margin:8px 0 0; color:var(--muted); font-size:13.5px}
-    ul{margin:10px 0 0; padding-left:18px}
-    li{margin:6px 0}
+    .two-col li{margin:0}
+    @media (max-width: 700px){
+      .two-col{grid-template-columns:1fr;}
+    }
 
     .focus-card{
       border-color: rgba(110,231,255,.30);
@@ -271,8 +276,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     summary.acc-sum::-webkit-details-marker{display:none}
     .body{padding:0 14px 14px}
-    .body p{margin:0; color:var(--muted)}
-    .body ul{margin:10px 0 0}
+    .body p{margin:0; color:var(--muted); font-size:13px; line-height:1.5}
 
     .mini-card{
       margin-top:12px;
@@ -304,7 +308,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .row:first-child{border-top:0; padding-top:2px}
     .val{white-space:nowrap; font-weight:900}
 
-    /* Contact UX */
+    /* Contact */
     .contact-wrap{
       display:flex;
       flex-direction:column;
@@ -336,12 +340,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border-color: rgba(110,231,255,.30);
       background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(96,165,250,.10));
     }
-
-    /* ✅ Make button (Email) look identical to LinkedIn/Upwork */
-    button.btn{
-      font-family: inherit;
-      color: inherit;
-    }
+    button.btn{font-family:inherit; color:inherit}
 
     footer{
       margin-top:22px;
@@ -353,6 +352,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T7LSD46F"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <div class="container">
 
     <!-- TOP HERO -->
@@ -387,178 +391,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
 
       <nav class="nav" aria-label="Page navigation">
-        <a class="pill" href="#ppc">Paid marketing services</a>
-        <a class="pill" href="#technical">Technical services</a>
-        <a class="pill" href="#work">Examples of work</a>
+        <a class="pill" href="#ppc">Paid marketing</a>
+        <a class="pill" href="#tracking">Conversion tracking</a>
+        <a class="pill" href="#automation">Automation</a>
+        <a class="pill" href="#reporting">Reporting</a>
         <a class="pill" href="#pricing">Prices</a>
         <a class="pill primary" href="#contact">Contact</a>
       </nav>
     </section>
 
-    <!-- PAY PER CLICK SERVICES -->
-    <section class="section" id="ppc" aria-label="Pay Per Click services">
+    <!-- PAID MARKETING -->
+    <section class="section" id="ppc" aria-label="Paid marketing services">
       <div class="head">
-        <h2 class="h2">Pay Per Click marketing services</h2>
-        <p class="hint">Google Ads is the main focus</p>
+        <h2 class="h2">Paid Marketing Services — Google Ads, Meta, Microsoft, LinkedIn, Amazon</h2>
       </div>
 
       <div class="grid">
-        <div class="span-6">
+        <!-- ✅ full-width description block -->
+        <div class="span-12">
           <div class="card focus-card">
             <div class="pad">
               <div class="kicker">
-                <h3 class="title2">Google Ads</h3>
-                <span class="badge focus">Primary focus</span>
+                <h3 class="title2">Paid media management</h3>
               </div>
-              <p class="desc">Strategy, setup, optimization, and reporting with scalable performance.</p>
-              <ul>
-                <li>Strategy & account structure</li>
+
+              <p class="desc">
+                Management across major ad platforms with clean structure and disciplined testing.
+              </p>
+              <p class="desc">
+                Continuous optimization based on performance data and measurable outcomes.
+              </p>
+
+              <!-- ✅ 4 points, 2 left + 2 right -->
+              <ul class="two-col">
+                <li>Strategy and account structure (built for scale)</li>
                 <li>Campaign setup + continuous optimization for revenue</li>
-                <li>Bidding strategy management + budget allocation control</li>
                 <li>Keyword research, search term analysis, and negative keywords</li>
                 <li>Performance monitoring + iterative improvements based on data</li>
-                <li>Reporting to stakeholders with clear next actions</li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div class="span-6">
-          <div class="card">
-            <div class="pad">
-              <div class="kicker">
-                <h3 class="title2">Meta Ads</h3>
-                <span class="badge">Full-funnel</span>
-              </div>
-              <p class="desc">Prospecting + remarketing with tracking you can trust.</p>
-              <ul>
-                <li>Full-funnel strategy (prospecting + retargeting)</li>
-                <li>Campaign setup with a clean testing structure</li>
-                <li>Budget & bidding optimization to improve CPA/ROAS</li>
-                <li>Creative and audience testing (A/B approach)</li>
-                <li>Performance monitoring + fast iteration based on results</li>
-                <li>Clear reporting and recommendations</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="span-4">
-          <div class="card">
-            <div class="pad">
-              <div class="kicker">
-                <h3 class="title2">Microsoft Ads</h3>
-                <span class="badge">Incremental</span>
-              </div>
-              <p class="desc">Extra search volume beyond Google with tight query control.</p>
-              <ul>
-                <li>Strategy + campaign setup</li>
-                <li>Bidding strategy and budget optimization</li>
-                <li>Keyword research and query control</li>
-                <li>Performance monitoring + ongoing optimization</li>
-                <li>Expansion opportunities and efficiency improvements</li>
-                <li>Reporting and actionable insights</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="span-4">
-          <div class="card">
-            <div class="pad">
-              <div class="kicker">
-                <h3 class="title2">LinkedIn Ads</h3>
-                <span class="badge">B2B</span>
-              </div>
-              <p class="desc">Lead gen built around quality, not vanity metrics.</p>
-              <ul>
-                <li>B2B campaign strategy for lead generation</li>
-                <li>Campaign setup</li>
-                <li>Targeting refinement (roles, industries, company sizes)</li>
-                <li>Performance monitoring + CPL/quality optimization</li>
-                <li>Reporting with clear optimization actions</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="span-4">
-          <div class="card">
-            <div class="pad">
-              <div class="kicker">
-                <h3 class="title2">Amazon Ads</h3>
-                <span class="badge">Marketplace</span>
-              </div>
-              <p class="desc">Sponsored Products / Brands / Display with measurable performance.</p>
-              <ul>
-                <li>Sponsored Products / Sponsored Brands / Sponsored Display setup</li>
-                <li>Keyword + product targeting strategy</li>
-                <li>Search term analysis + negative targeting</li>
-                <li>Performance monitoring + continuous optimization</li>
-                <li>Reporting focused on revenue impact</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TECHNICAL SERVICES -->
-    <section class="section" id="technical" aria-label="Technical services">
-      <div class="head">
-        <h2 class="h2">Technical services</h2>
-        <p class="hint">Tracking + data accuracy + automation</p>
-      </div>
-
-      <div class="grid">
-        <div class="span-6">
-          <div class="card">
-            <div class="pad">
-              <div class="kicker">
-                <h3 class="title2">Conversion tracking</h3>
-                <span class="badge">GA4 • Enhanced</span>
-              </div>
-              <p class="desc">End-to-end measurement so you can trust performance numbers.</p>
-              <ul>
-                <li>Conversion tracking setup and optimization</li>
-                <li>Enhanced conversions + offline conversions</li>
-                <li>Consent Mode and server-side tracking</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="span-6">
-          <div class="card">
-            <div class="pad">
-              <div class="kicker">
-                <h3 class="title2">Automation</h3>
-                <span class="badge">CRM • Workflows</span>
-              </div>
-              <p class="desc">Data sync, reporting, and CRM workflows that reduce manual work.</p>
-              <ul>
-                <li>Workflow and dataflow automations</li>
-                <li>Automated reporting</li>
-                <li>CRM routing, notifications, and more</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXAMPLES -->
-    <section class="section" id="work" aria-label="Examples of work">
-      <div class="head">
-        <h2 class="h2">Examples of my work</h2>
-        <p class="hint">Open each block</p>
-      </div>
-
-      <div class="grid">
+        <!-- ✅ example UNDER the description block -->
         <div class="span-12">
           <details class="acc">
             <summary class="acc-sum">
-              PPC Marketing (Google Ads)
+              Example: PPC Marketing (Google Ads)
               <span class="hint">Optimization • Scaling</span>
             </summary>
             <div class="body">
@@ -575,30 +454,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
           </details>
         </div>
+      </div>
+    </section>
 
+    <!-- CONVERSION TRACKING -->
+    <section class="section" id="tracking" aria-label="Conversion tracking services">
+      <div class="head">
+        <h2 class="h2">Conversion tracking services</h2>
+      </div>
+
+      <div class="grid">
+        <!-- ✅ full-width description block -->
         <div class="span-12">
-          <details class="acc">
-            <summary class="acc-sum">
-              Automation
-              <span class="hint">Crawling • Workflows</span>
-            </summary>
-            <div class="body">
-              <p>
-                This automation retrieves social media profile links from competitors’ websites and gathers new content
-                they publish.
-              </p>
-              <div class="mini-card">
-                <strong>Example image</strong>
-                <img class="example-img" src="Screenshot 2026-01-06 213745.png" alt="Automation workflow example" />
+          <div class="card">
+            <div class="pad">
+              <div class="kicker">
+                <h3 class="title2">Conversion tracking</h3>
               </div>
+
+              <p class="desc">
+                Track what happens after the click (leads, calls, bookings, purchases) so campaigns learn from real outcomes.
+              </p>
+              <p class="desc">
+                Fix missing or duplicated conversions and connect marketing data with what happens later in CRM or sales.
+              </p>
+
+              <!-- ✅ 4 points, 2 left + 2 right -->
+              <ul class="two-col">
+                <li>Tracking setup and optimization for better campaign performance</li>
+                <li>Enhanced conversions (stronger attribution when browsers limit tracking)</li>
+                <li>Offline conversions (connect CRM outcomes back to ad spend)</li>
+                <li>Consent Mode + server-side tracking (more stable tracking and cleaner data)</li>
+              </ul>
             </div>
-          </details>
+          </div>
         </div>
 
+        <!-- ✅ example UNDER the description block -->
         <div class="span-12">
           <details class="acc">
             <summary class="acc-sum">
-              Conversion Tracking
+              Example: Conversion Tracking
               <span class="hint">GA4 • E-commerce</span>
             </summary>
             <div class="body">
@@ -613,18 +509,108 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
           </details>
         </div>
+      </div>
+    </section>
 
-        <!-- Reporting example (with image) -->
+    <!-- AUTOMATION -->
+    <section class="section" id="automation" aria-label="Automation">
+      <div class="head">
+        <h2 class="h2">Automation</h2>
+      </div>
+
+      <div class="grid">
+        <!-- ✅ full-width description block -->
+        <div class="span-12">
+          <div class="card">
+            <div class="pad">
+              <div class="kicker">
+                <h3 class="title2">Automation and integrations</h3>
+              </div>
+
+              <p class="desc">
+                Workflows that connect tools and keep data in sync (ads → analytics → CRM → reporting).
+              </p>
+              <p class="desc">
+                Common use cases: lead routing, follow-ups, pipeline hygiene, and automated reporting updates.
+              </p>
+
+              <!-- ✅ 4 points, 2 left + 2 right -->
+              <ul class="two-col">
+                <li>Data integration and synchronization</li>
+                <li>CRM workflows, routing, and notifications</li>
+                <li>Automated reporting and alerts</li>
+                <li>Process automation for marketing and sales teams</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✅ example UNDER the description block -->
         <div class="span-12">
           <details class="acc">
             <summary class="acc-sum">
-              Reporting
+              Example: Automation
+              <span class="hint">Crawling • Workflows</span>
+            </summary>
+            <div class="body">
+              <p>
+                This automation retrieves social media profile links from competitors’ websites and gathers new content
+                they publish.
+              </p>
+              <div class="mini-card">
+                <strong>Example image</strong>
+                <img class="example-img" src="Screenshot 2026-01-06 213745.png" alt="Automation workflow example" />
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- REPORTING -->
+    <section class="section" id="reporting" aria-label="Reporting">
+      <div class="head">
+        <h2 class="h2">Reporting</h2>
+      </div>
+
+      <div class="grid">
+        <!-- ✅ full-width description block -->
+        <div class="span-12">
+          <div class="card">
+            <div class="pad">
+              <div class="kicker">
+                <h3 class="title2">Marketing reporting (Looker Studio)</h3>
+              </div>
+
+              <p class="desc">
+                Dashboards that turn scattered marketing data into clear, decision-ready insights in one place.
+              </p>
+              <p class="desc">
+                For B2B teams, reporting acts as a control system: visibility across channels and fewer decisions based on assumptions.
+              </p>
+
+              <!-- ✅ 4 points, 2 left + 2 right -->
+              <ul class="two-col">
+                <li>Dashboards that combine ads + analytics (and CRM where needed)</li>
+                <li>Focus on outcomes: leads, pipeline, revenue, and efficiency</li>
+                <li>Trend monitoring and early warning signals</li>
+                <li>Clear visibility into what to scale and what to fix</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✅ example UNDER the description block -->
+        <div class="span-12">
+          <details class="acc">
+            <summary class="acc-sum">
+              Example: Reporting
               <span class="hint">Reporting • Data-driven</span>
             </summary>
             <div class="body">
               <p>
                 This is one part of a larger real-time report that compares a company’s organic results with its competitors.
-                It helps us evaluate the effectiveness of the company’s SEO efforts and is especially useful in B2B.
+                It helps evaluate the effectiveness of the company’s SEO efforts and is especially useful in B2B.
               </p>
               <div class="mini-card">
                 <strong>Example image</strong>
@@ -636,7 +622,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
     </section>
 
-    <!-- PRICES -->
+    <!-- PRICES (unchanged) -->
     <section class="section" id="pricing" aria-label="Prices">
       <div class="head">
         <h2 class="h2">Prices</h2>
@@ -684,7 +670,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </details>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT (unchanged) -->
     <section class="section" id="contact" aria-label="Contact">
       <div class="head">
         <h2 class="h2">Contact</h2>
@@ -715,7 +701,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="cta">
           <a class="btn contact" href="https://www.linkedin.com/in/dmytro-ivanenko-09ba95197/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a class="btn contact" href="https://www.upwork.com/freelancers/~01d94beb9ccb6babe7" target="_blank" rel="noreferrer">Upwork</a>
-          <!-- ✅ Email button now same style -->
           <button class="btn contact" id="emailBtn" type="button">Email</button>
 
           <span id="emailReveal" style="display:none; color:rgba(242,245,255,.98); font-weight:900;">
