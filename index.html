@@ -600,7 +600,7 @@
               </p>
               <div class="mini-card">
                 <strong>Example image</strong>
-                <img class="example-img" src="Reporting.png" alt="Reporting dashboard example" />
+                <img class="example-img" src="Reporting1.png" alt="Reporting dashboard example" />
               </div>
             </div>
           </details>
@@ -696,13 +696,22 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    // Reveal email on click
+    // Ensure dataLayer exists (GTM creates it, but keep safe)
+    window.dataLayer = window.dataLayer || [];
+
+    // Reveal email on click + push dataLayer event
     (function(){
       var btn = document.getElementById("emailBtn");
       var reveal = document.getElementById("emailReveal");
       if(!btn || !reveal) return;
 
       btn.addEventListener("click", function(){
+        window.dataLayer.push({
+          event: "email_click",
+          component: "contact",
+          button_id: "emailBtn"
+        });
+
         var shown = reveal.style.display !== "none";
         reveal.style.display = shown ? "none" : "inline";
         btn.textContent = shown ? "Email" : "Hide email";
@@ -710,6 +719,7 @@
     })();
 
     // Reveal Google Meet Appointment on click (inject scheduler button only when shown)
+    // + push dataLayer event
     (function(){
       var btn = document.getElementById("meetBtn");
       var reveal = document.getElementById("meetReveal");
@@ -717,6 +727,12 @@
       if(!btn || !reveal) return;
 
       btn.addEventListener("click", function(){
+        window.dataLayer.push({
+          event: "book_meeting_click",
+          component: "contact",
+          button_id: "meetBtn"
+        });
+
         var shown = reveal.style.display !== "none";
 
         if (shown) {
