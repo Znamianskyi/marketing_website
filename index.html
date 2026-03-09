@@ -14,11 +14,6 @@
   <title>Dmytro Ivanenko — Digital Marketing Expert</title>
   <meta name="description" content="Dmytro Ivanenko — Digital Marketing Expert. Paid media, tracking, automation, reporting." />
 
-  <!-- Google Calendar Appointment Scheduling begin -->
-  <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-  <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-  <!-- end Google Calendar Appointment Scheduling -->
-
   <style>
     :root{
       --bg:#0e1630;
@@ -355,81 +350,426 @@
 </head>
 
 <body>
-<!-- Rest of your page stays identical -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T7LSD46F"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-<script>
-document.getElementById("y").textContent = new Date().getFullYear();
+  <div class="container">
 
-window.dataLayer = window.dataLayer || [];
+    <!-- TOP HERO -->
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <div>
+          <h1 class="big-role">Digital Marketing Expert</h1>
 
-(function(){
-  var btn = document.getElementById("emailBtn");
-  var reveal = document.getElementById("emailReveal");
-  if(!btn || !reveal) return;
+          <div class="lead">
+            <p>Most companies run ads, but very few run a system that turns traffic into revenue.</p>
 
-  btn.addEventListener("click", function(){
-    window.dataLayer.push({
-      event: "email_click",
-      component: "contact",
-      button_id: "emailBtn"
-    });
+            <p>
+              I help companies rebuild their paid marketing the right way:<br>
+              clean tracking, disciplined testing, and campaigns optimized for revenue, not clicks.
+            </p>
 
-    var shown = reveal.style.display !== "none";
-    reveal.style.display = shown ? "none" : "inline";
-    btn.textContent = shown ? "Email" : "Hide email";
-  });
-})();
+            <p>
+              Paid marketing services, analytics, and automations — one accountable owner.
+            </p>
+          </div>
 
-(function(){
-  var btn = document.getElementById("meetBtn");
-  var reveal = document.getElementById("meetReveal");
-  var loaded = false;
-  if(!btn || !reveal) return;
+          <div class="highlight">
+            Former Google Ads consultant. Relying on data — no guessing.
+          </div>
+        </div>
 
-  btn.addEventListener("click", function(){
+        <div class="hero-right">
+          <img class="avatar" src="dmytro.png" alt="Dmytro Ivanenko photo" />
+          <p class="right-name">Dmytro Ivanenko</p>
+          <div class="status"><span class="dot" aria-hidden="true"></span> Open for new projects ✅</div>
+        </div>
+      </div>
 
-    window.dataLayer.push({
-      event: "book_meeting_click",
-      component: "contact",
-      button_id: "meetBtn"
-    });
+      <nav class="nav" aria-label="Page navigation">
+        <a class="pill" href="#ppc">Paid marketing</a>
+        <a class="pill" href="#tracking">Conversion tracking</a>
+        <a class="pill" href="#automation">Automation</a>
+        <a class="pill" href="#reporting">Reporting</a>
+        <a class="pill" href="#pricing">Prices</a>
+        <a class="pill primary" href="#contact">Contact</a>
+      </nav>
+    </section>
 
-    var shown = reveal.style.display !== "none";
+    <!-- PAID MARKETING -->
+    <section class="section" id="ppc" aria-label="Paid marketing services">
+      <div class="head">
+        <h2 class="h2">Paid Marketing Services — Google Ads, Meta, Microsoft, LinkedIn, Amazon</h2>
+      </div>
 
-    if (shown) {
-      reveal.style.display = "none";
-      btn.textContent = "Book a 15-minute call with Dmytro";
-      return;
-    }
+      <div class="grid">
+        <div class="span-12">
+          <div class="card focus-card">
+            <div class="pad">
+              <div class="kicker">
+                <h3 class="title2">Paid media management</h3>
+              </div>
 
-    reveal.style.display = "inline-block";
-    btn.textContent = "Hide appointment";
+              <p class="desc">
+                Management across major ad platforms with clean structure and disciplined testing.
+              </p>
+              <p class="desc">
+                Continuous optimization based on performance data and measurable outcomes.
+              </p>
 
-    if (!loaded) {
-      loaded = true;
+              <ul class="two-col">
+                <li>Strategy and account structure (built for scale)</li>
+                <li>Campaign setup + continuous optimization for revenue</li>
+                <li>Keyword research, search term analysis, and negative keywords</li>
+                <li>Performance monitoring + iterative improvements based on data</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-      var tries = 0;
-      (function waitForCalendar(){
-        tries++;
-        if (window.calendar && calendar.schedulingButton && calendar.schedulingButton.load) {
+        <div class="span-12">
+          <details class="acc">
+            <summary class="acc-sum">
+              Example: PPC Marketing (Google Ads)
+              <span class="hint">Optimization • Scaling</span>
+            </summary>
+            <div class="body">
+              <p>
+                The client wanted to expand and increase conversions and requested a one-time account optimization.
+                After analyzing the situation, I made changes tailored to the client’s needs. The screenshot illustrates
+                growth in clicks and conversions following the adjustments. The client achieved a 240% revenue increase
+                with only a 15% rise in costs.
+              </p>
+              <div class="mini-card">
+                <strong>Example image</strong>
+                <img class="example-img" src="Google ads.png" alt="Google Ads results example" />
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
 
-          calendar.schedulingButton.load({
-            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2xDegYfKspYp_Avnot0xbHYbwbswrzzhn4paeoAhbJMy92rgsasGi9qUxjymmau0cVjXl__Fj-?gv=true',
-            color: '#33B679',
-            label: "Google Meet Appointment",
-            target: reveal
-          });
+    <!-- CONVERSION TRACKING -->
+    <section class="section" id="tracking" aria-label="Conversion tracking services">
+      <div class="head">
+        <h2 class="h2">Conversion tracking services</h2>
+      </div>
 
+      <div class="grid">
+        <div class="span-12">
+          <div class="card">
+            <div class="pad">
+              <div class="kicker">
+                <h3 class="title2">Conversion tracking</h3>
+              </div>
+
+              <p class="desc">
+                Track what happens after the click (leads, calls, bookings, purchases) so campaigns learn from real outcomes.
+              </p>
+              <p class="desc">
+                Fix missing or duplicated conversions and connect marketing data with what happens later in CRM or sales.
+              </p>
+
+              <ul class="two-col">
+                <li>Tracking setup and optimization for better campaign performance</li>
+                <li>Enhanced conversions (stronger attribution when browsers limit tracking)</li>
+                <li>Offline conversions (connect CRM outcomes back to ad spend)</li>
+                <li>Consent Mode + server-side tracking (more stable tracking and cleaner data)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="span-12">
+          <details class="acc">
+            <summary class="acc-sum">
+              Example: Conversion Tracking
+              <span class="hint">GA4 • E-commerce</span>
+            </summary>
+            <div class="body">
+              <p>
+                The screenshot shows GA4 e-commerce funnel tracking. With this data, it’s easy to understand where we can
+                improve the website’s UX to increase purchases.
+              </p>
+              <div class="mini-card">
+                <strong>Example image</strong>
+                <img class="example-img" src="GA4-Ecomm.png" alt="GA4 e-commerce conversion tracking example" />
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTOMATION -->
+    <section class="section" id="automation" aria-label="Automation">
+      <div class="head">
+        <h2 class="h2">Automation</h2>
+      </div>
+
+      <div class="grid">
+        <div class="span-12">
+          <div class="card">
+            <div class="pad">
+              <div class="kicker">
+                <h3 class="title2">Automation and integrations</h3>
+              </div>
+
+              <p class="desc">
+                Workflows that connect tools and keep data in sync (ads → analytics → CRM → reporting).
+              </p>
+              <p class="desc">
+                Common use cases: lead routing, follow-ups, pipeline hygiene, and automated reporting updates.
+              </p>
+
+              <ul class="two-col">
+                <li>Data integration and synchronization</li>
+                <li>CRM workflows, routing, and notifications</li>
+                <li>Automated reporting and alerts</li>
+                <li>Process automation for marketing and sales teams</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="span-12">
+          <details class="acc">
+            <summary class="acc-sum">
+              Example: Automation
+              <span class="hint">Crawling • Workflows</span>
+            </summary>
+            <div class="body">
+              <p>
+                This automation retrieves social media profile links from competitors’ websites and gathers new content
+                they publish.
+              </p>
+              <div class="mini-card">
+                <strong>Example image</strong>
+                <img class="example-img" src="Screenshot 2026-01-06 213745.png" alt="Automation workflow example" />
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- REPORTING -->
+    <section class="section" id="reporting" aria-label="Reporting">
+      <div class="head">
+        <h2 class="h2">Reporting</h2>
+      </div>
+
+      <div class="grid">
+        <div class="span-12">
+          <div class="card">
+            <div class="pad">
+              <div class="kicker">
+                <h3 class="title2">Marketing reporting (Looker Studio)</h3>
+              </div>
+
+              <p class="desc">
+                Dashboards that turn scattered marketing data into clear, decision-ready insights in one place.
+              </p>
+              <p class="desc">
+                For B2B teams, reporting acts as a control system: visibility across channels and fewer decisions based on assumptions.
+              </p>
+
+              <ul class="two-col">
+                <li>Dashboards that combine ads + analytics (and CRM where needed)</li>
+                <li>Focus on outcomes: leads, pipeline, revenue, and efficiency</li>
+                <li>Trend monitoring and early warning signals</li>
+                <li>Clear visibility into what to scale and what to fix</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="span-12">
+          <details class="acc">
+            <summary class="acc-sum">
+              Example: Reporting
+              <span class="hint">Reporting • Data-driven</span>
+            </summary>
+            <div class="body">
+              <p>
+                This is one part of a larger real-time report. Here you can see selected results from Google Ads campaigns, as well as overall website metrics from GA4 and Google Search Console. 
+                Such data helps the client analyse and control the effectiveness of marketing activities.
+              </p>
+              <div class="mini-card">
+                <strong>Example image</strong>
+                <img class="example-img" src="Reporting1.png" alt="Reporting dashboard example" />
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICES (unchanged) -->
+    <section class="section" id="pricing" aria-label="Prices">
+      <div class="head">
+        <h2 class="h2">Prices</h2>
+        <p class="hint">Click to expand</p>
+      </div>
+
+      <details class="acc">
+        <summary class="acc-sum">
+          Prices
+          <span class="hint">Starting points</span>
+        </summary>
+        <div class="body">
+          <div class="row">
+            <div>
+              <strong>One-time account audit</strong>
+              <div class="hint">Google / Meta / Microsoft / LinkedIn / Amazon — report with next steps.</div>
+            </div>
+            <div class="val">from $200</div>
+          </div>
+
+          <div class="row">
+            <div>
+              <strong>Campaign setup</strong>
+              <div class="hint">Cost strongly depends on your business and scope.</div>
+            </div>
+            <div class="val">from $800</div>
+          </div>
+
+          <div class="row">
+            <div>
+              <strong>Campaign management</strong>
+              <div class="hint">Cost strongly depends on your business and scope.</div>
+            </div>
+            <div class="val">from $500/month</div>
+          </div>
+
+          <div class="row">
+            <div>
+              <strong>Technical implementation</strong>
+              <div class="hint">Tracking, consent mode, server-side, etc.</div>
+            </div>
+            <div class="val">$70/hour</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- CONTACT (changed only in scheduler button area) -->
+    <section class="section" id="contact" aria-label="Contact">
+      <div class="head">
+        <h2 class="h2">Contact</h2>
+        <p class="hint">Quick actions</p>
+      </div>
+
+      <div class="contact-wrap">
+        <div>
+          <!-- Google Calendar Appointment Scheduling assets (kept) -->
+          <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+          <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+
+          <!-- Reveal button (works like Email) -->
+          <button class="btn contact" id="meetBtn" type="button">Book a 15-minute call with Dmytro</button>
+
+          <!-- Scheduler button will be injected here only after click -->
+          <span id="meetReveal" style="display:none;"></span>
+        </div>
+
+        <div class="cta">
+          <a class="btn contact" href="https://www.linkedin.com/in/dmytro-ivanenko-09ba95197/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn contact" href="https://www.upwork.com/freelancers/~01d94beb9ccb6babe7" target="_blank" rel="noreferrer">Upwork</a>
+          <button class="btn contact" id="emailBtn" type="button">Email</button>
+
+          <span id="emailReveal" style="display:none; color:rgba(242,245,255,.98); font-weight:900;">
+            dmytro.ivanenko3@gmail.com
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Dmytro Ivanenko — Digital Marketing Expert
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Ensure dataLayer exists (GTM creates it, but keep safe)
+    window.dataLayer = window.dataLayer || [];
+
+    // Reveal email on click + push dataLayer event
+    (function(){
+      var btn = document.getElementById("emailBtn");
+      var reveal = document.getElementById("emailReveal");
+      if(!btn || !reveal) return;
+
+      btn.addEventListener("click", function(){
+        window.dataLayer.push({
+          event: "email_click",
+          component: "contact",
+          button_id: "emailBtn"
+        });
+
+        var shown = reveal.style.display !== "none";
+        reveal.style.display = shown ? "none" : "inline";
+        btn.textContent = shown ? "Email" : "Hide email";
+      });
+    })();
+
+    // Reveal Google Meet Appointment on click (inject scheduler button only when shown)
+    // + push dataLayer event
+    (function(){
+      var btn = document.getElementById("meetBtn");
+      var reveal = document.getElementById("meetReveal");
+      var loaded = false;
+      if(!btn || !reveal) return;
+
+      btn.addEventListener("click", function(){
+        window.dataLayer.push({
+          event: "book_meeting_click",
+          component: "contact",
+          button_id: "meetBtn"
+        });
+
+        var shown = reveal.style.display !== "none";
+
+        if (shown) {
+          // hide
+          reveal.style.display = "none";
+          btn.textContent = "Book a 15-minute call with Dmytro";
           return;
         }
-        if (tries < 60) {
-          setTimeout(waitForCalendar, 100);
-        }
-      })();
-    }
 
-  });
-})();
-</script>
+        // show
+        reveal.style.display = "inline-block";
+        btn.textContent = "Hide appointment";
+
+        // load scheduler button only once
+        if (!loaded) {
+          loaded = true;
+
+          // wait until Google script is available (async load)
+          var tries = 0;
+          (function waitForCalendar(){
+            tries++;
+            if (window.calendar && calendar.schedulingButton && calendar.schedulingButton.load) {
+              calendar.schedulingButton.load({
+                url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2xDegYfKspYp_Avnot0xbHYbwbswrzzhn4paeoAhbJMy92rgsasGi9qUxjymmau0cVjXl__Fj-?gv=true',
+                color: '#33B679',
+                label: 'Google Meet Appointment',
+                target: reveal
+              });
+              return;
+            }
+            if (tries < 60) {
+              setTimeout(waitForCalendar, 100);
+            }
+          })();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
